@@ -19,17 +19,11 @@
   
 */
 
-
 //Youtube jsapi 
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-function onYouTubePlayerAPIReady() {
-
-}
-
 
 var player;
 
@@ -43,8 +37,15 @@ function onYouTubePlayerAPIReady() {
   });
 }
 
+function onPlayerReady(){
 
+ var playButton = document.getElementById("play-button");
+  playButton.addEventListener("click", function() {
+    player.playVideo();
+  });
 
+	return;
+}
 
 
 /** Global variables **/
@@ -145,6 +146,14 @@ $('.result-div').on('click', '.more-btn', event => {
   playlist_input = curr_val;
   getPlayListItems(playlist_input, getPlaylistID);
 });
+
+//play pause for iframe
+/*
+$('.nav-div').on('click', '#play-button', event => {
+  player.playVideo();
+});
+*/
+
 Mousetrap.bind('a b', function(){
   $('.show-key').val('*');
 });
