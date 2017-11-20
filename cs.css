@@ -1,0 +1,39 @@
+body {
+	//background-color:black;
+}
+
+.hide-it {
+  display: none;
+}
+
+iframe {
+  width: 640px;
+  height: 360px;
+}
+
+img, iframe{
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input[type=text] {
+  width: 450px;
+  padding: 2px 3px;
+}
+.result-div {
+	box-sizing: border-box;
+	display: inline-block;
+}
+.search-result {
+	width: 300px;
+	height: 150px;
+	float: left;
+	clear: right;
+}
+.search-btn {
+
+}
+.click-btn {
+  background-image: url();
+}

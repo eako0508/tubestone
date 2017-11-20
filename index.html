@@ -4,30 +4,35 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>Tubestone</title>
-	<link href="cs.css" rel="stylesheet" type="text/css" />
+	<link href="cs.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 	<main>
-  	<section class='section-welcome'>
-			<span>welcome message</span>
-			<form action='#' class='search-form'>
-				<input type='text' name='user-input' class='text-input' required>
-				<input type='submit' value='Search'>
-			</form>
+  	<section class='welcome-section'>
+		<span>welcome message</span>
+		<form action='#' class='search-form'>
+			<input type='text' name='user-input' class='text-input' required>
+			<input type='submit' value='Search'>
+		</form>
   	</section>
-		<section class='search-section'>
-			<h3>Search Youtube Videos</h3>
-			<form action='#' class='search-form'>
-				<input type='text' name='user-input' class='text-input' required>
-				<input type='submit' value='Search'>
-			</form>
-		</section>
-		<section class='result-section'>
-			<div class='result-head'></div>
-			<div class='result-div' aria-live="assertive"></div>
-		</section>
-	</main>
 	
+	<section class='search-section'>
+		<h3>Search Youtube Videos</h3>
+		<form action='#' class='search-form'>
+			<input type='text' name='user-input' class='text-input' required>
+			<input type='submit' value='Search'>
+		</form>
+	</section>
+	<section class='result-section'>
+		<div class='result-head'></div>
+		<div class='result-div' aria-live="assertive"></div>
+	</section>
+	<section class='video-section'>
+		<div class='video iframe-div'></div>
+		<div class='video nav-div'><div>
+		<div class='video-related'></div>
+	</section>
+	</main>
   <script type='text/javascript' src='https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js?a4098'></script>
   <script type="text/javascript" src='//code.jquery.com/jquery-3.2.1.min.js'></script>
   <script src="renderer.js"></script>

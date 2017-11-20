@@ -1,8 +1,12 @@
 var renderer = (function() {
-  
+
+	//MAIN
+	//displays search results, including next and previous 
   function displaySearchResult(data){
+		//displays search keyword
 	  $('.result-head').html(`<h1>Results for '${user_input.toUpperCase()}' - Total results: ${data.pageInfo.totalResults}</h1>`);
-	  
+	 
+		//displays each search items 
 	  const results = data.items.map((item, index) => renderResult(item, index));
 	  $('.result-div').html(results);
 	  
@@ -17,54 +21,78 @@ var renderer = (function() {
 	  }
 	}
 
-  function renderResult(result, index){
-	  return `
-	  <div>
-	    <p>${result.snippet.title}</p>
-	    <img id='img-${index}' src='${result.snippet.thumbnails.default.url}' tabindex='0' aria-label='${result.snippet.title}'>
-	    
-	    <iframe type="text/html"
-	  src="https://www.youtube.com/embed/${result.id.videoId}?iv_load_policy=3&showinfo=0&rel=0"
-	  frameborder="0" class='hide-it ytplayer'></iframe>
-	  
-	    <button class='more-btn' value='${result.snippet.channelId}' aria-hidden='true'>More from uploader</button>
-	  </div>
-	  `;
+	//displays each search results
+	function renderResult(result, index){
+		return `
+			<div class='search-result'>
+			<img id='img-${index}' src='${result.snippet.thumbnails.default.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
+			<p>${result.snippet.title}</p>
+			</div>
+		`;
 	}
+
+
+	function displayVideoPage(videoid){
+		displayVideo(videoid);
+		return;
+	}
+
+	function displayVideo(videoid){
+		$('.iframe-div').html(`
+	    <iframe type="text/html" src="https://www.youtube.com/embed/${videoid}?enablejsapi=1?iv_load_policy=3&showinfo=0&rel=0" frameborder="0" class='ytplayer'></iframe>`);
+	}
+
+	function displayRelatedVideoList(videoid){
+
+		return;
+	}
+
 
 /*** Rendering ***/
 	function addNext(){
 	  return `
-	    <button class='btn next-btn'>Next</button>
+	    <button class='btn next-btn search-btn'>Next</button>
 	  `;
 	}
 	function addPrev(){
 	  return `
-	    <button class='btn prev-btn'>Prev</button>
+	    <button class='btn prev-btn search-btn'>Prev</button>
 	  `;
 	}
 	function addPlayNext(){
 	  return `
-	    <button class='btn nextPlay-btn'>Next</button>
+	    <button class='btn nextPlay-btn search-btn'>Next</button>
 	  `;
 	}
 	function addPlayPrev(){
 	  return `
-	    <button class='btn prevPlay-btn'>Prev</button>
+	    <button class='btn prevPlay-btn search-btn'>Prev</button>
 	  `;
 	}
   
+
+
+
+
+
+
+
   return {
-    alertMessage: function() {
-      alert("This is working!");
-    },
     displaySearchResult: displaySearchResult,
     renderResult: renderResult,
     addNext: addNext,
     addPrev: addPrev,
     addPlayNext: addPlayNext,
-    addPlayPrev: addPlayPrev
+    addPlayPrev: addPlayPrev,
+	displayVideoPage: displayVideoPage
   }
 }());
   
   
+	  /* iframe snippet 
+	    <iframe type="text/html"
+	  src="https://www.youtube.com/embed/${result.id.videoId}?iv_load_policy=3&showinfo=0&rel=0"
+	  frameborder="0" class='hide-it ytplayer'></iframe>
+	  
+	    <button class='more-btn' value='${result.snippet.channelId}' aria-hidden='true'>More from uploader</button>
+*/

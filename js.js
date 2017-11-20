@@ -20,6 +20,31 @@
 */
 
 
+//Youtube jsapi 
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+function onYouTubePlayerAPIReady() {
+
+}
+
+
+var player;
+
+function onYouTubePlayerAPIReady() {
+  // create the global player from the specific iframe (#video)
+  player = new YT.Player('video', {
+    events: {
+      // call this function when player is ready to use
+      'onReady': onPlayerReady
+    }
+  });
+}
+
+
+
 
 
 /** Global variables **/
@@ -73,6 +98,17 @@ function getPlaylistID(data){
 
 
 
+
+/*
+function getRelatedVideoList(videoId){
+	const query = {
+		part: 'snippet'
+		
+	}
+	return;
+}
+*/
+
 /** Event listener **/
 function watchSubmit(){
   // Confirm that separate object work
@@ -117,11 +153,19 @@ Mousetrap.bind('a b', function(){
 
 
 
-
+/*
 $('.result-div').on('click', 'img', event => {
   $(event.currentTarget).addClass('hide-it');
   $(event.currentTarget).parent('div').find('iframe').removeClass('hide-it');
 });
+*/
+$('.result-div').on('click', 'img', event => {
+	//open video on video-section iframe-div
+	let videoId = $(event.target).attr('videoId');
+	renderer.displayVideoPage(videoId);
+//	displayRelatedVideoList(videoId);
+});
+
 
 $(".result-div").on('keypress', 'img[id^="img"]', event => {
   console.log(event);
@@ -130,7 +174,6 @@ $(".result-div").on('keypress', 'img[id^="img"]', event => {
     $(event.currentTarget).parent('div').find('iframe').removeClass('hide-it');  
   }
 });
-
 
 
 
