@@ -18,6 +18,8 @@ function onYouTubePlayerAPIReady() {
   });
 }
 */
+
+	//Controllers
 	//MAIN
 	//displays search results, including next and previous 
   function displaySearchResult(data){
@@ -39,6 +41,15 @@ function onYouTubePlayerAPIReady() {
 	  }
 	}
 
+	function displayRelatedVideoList(data){
+		const result = data.items.map((item, index) => renderList(item, index));
+		$('.video-related').html(result);
+		
+		return;
+	}
+
+
+
 	//displays each search results
 	function renderResult(result, index){
 		return `
@@ -48,7 +59,12 @@ function onYouTubePlayerAPIReady() {
 			</div>
 		`;
 	}
-
+	function renderList(result, index){
+		return `
+			<img id='img-${index}' src='${result.snippet.thumbnails.default.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
+			<p>${result.snippet.title}</p>
+		`;
+	}
 
 	function displayVideoPage(videoid){
 		displayVideo(videoid);
@@ -60,10 +76,7 @@ function onYouTubePlayerAPIReady() {
 	    <iframe type="text/html" src="https://www.youtube.com/embed/${videoid}?enablejsapi=1?iv_load_policy=3&showinfo=0&rel=0" frameborder="0" class='ytplayer'></iframe>`);
 	}
 
-	function displayRelatedVideoList(videoid){
-
-		return;
-	}
+	
 
 
 /*** Rendering ***/
@@ -102,7 +115,8 @@ function onYouTubePlayerAPIReady() {
     addPrev: addPrev,
     addPlayNext: addPlayNext,
     addPlayPrev: addPlayPrev,
-	displayVideoPage: displayVideoPage
+		displayVideoPage: displayVideoPage,
+		displayRelatedVideoList: displayRelatedVideoList
   }
 }());
   

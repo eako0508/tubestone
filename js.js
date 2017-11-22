@@ -19,6 +19,7 @@
   
 */
 
+/*
 //Youtube jsapi 
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
@@ -32,7 +33,7 @@ function onYouTubePlayerAPIReady() {
   player = new YT.Player('video', {
     events: {
       // call this function when player is ready to use
-      'onReady': onPlayerReady
+      //'onReady': onPlayerReady
     }
   });
 }
@@ -44,9 +45,13 @@ function onPlayerReady(){
     player.playVideo();
   });
 
+	$('.nav-div').on('click', '#play-button', event => {
+		player.playVideo();
+	});
+
 	return;
 }
-
+*/
 
 /** Global variables **/
 let user_input = '';
@@ -100,15 +105,18 @@ function getPlaylistID(data){
 
 
 
-/*
-function getRelatedVideoList(videoId){
+
+function getRelatedVideoList(videoId, callback){
 	const query = {
-		part: 'snippet'
-		
+		part: 'snippet',
+		key: apikey,
+		type: 'video',
+		relatedToVideoId: videoId
 	}
+	$.getJSON(YOUTUBE_SEARCH_URL, query, callback);
 	return;
 }
-*/
+
 
 /** Event listener **/
 function watchSubmit(){
@@ -172,7 +180,7 @@ $('.result-div').on('click', 'img', event => {
 	//open video on video-section iframe-div
 	let videoId = $(event.target).attr('videoId');
 	renderer.displayVideoPage(videoId);
-//	displayRelatedVideoList(videoId);
+	getRelatedVideoList(videoId, renderer.displayRelatedVideoList);
 });
 
 
