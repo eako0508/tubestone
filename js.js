@@ -19,37 +19,63 @@
   
 */
 
-/*
+
 //Youtube jsapi 
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 var player;
 
 function onYouTubePlayerAPIReady() {
+	console.log('onYouTubePlayerAPIReady');
   // create the global player from the specific iframe (#video)
   player = new YT.Player('video', {
     events: {
       // call this function when player is ready to use
-      //'onReady': onPlayerReady
+      'onReady': onPlayerReady,
+      'onStateChange': onStateChange
     }
   });
 }
+	
+function onStateChange(event){
+	console.log('onStateChange');
+	//console.log(event);
+	return;
+}
 
-function onPlayerReady(){
-
- var playButton = document.getElementById("play-button");
-  playButton.addEventListener("click", function() {
-    player.playVideo();
-  });
-
+function onPlayerReady(event){
+	
+	console.log('onPlayerReady !');
+	//console.log(event);
+	
+	//event.target.playVideo();
+	$('#test1').click(function(){
+		player.loadVideoById('LSY8P6XdyIU');
+	});
+	
+	$('.result-div').on('click', 'img', event => {
+		//open video on video-section iframe-div
+		let videoId = $(event.target).attr('videoId');
+		//TODO 
+		//inject videoId somehow
+		player.loadVideoById(videoId);
+		//renderer.displayVideoPage(videoId);	removed
+		getRelatedVideoList(videoId, renderer.displayRelatedVideoList);
+	});
+	
+	
+	
 	$('.nav-div').on('click', '#play-button', event => {
 		player.playVideo();
 	});
-
-	return;
+	$('.nav-div').on('click', '#pause-button', event => {
+		player.pauseVideo();
+	});
+}
+/*
+playerVars: {
+	'enablejsapi': 1,
+	'iv_load_policy': 0,
+	'showinfo': 0
 }
 */
 
@@ -125,7 +151,7 @@ function watchSubmit(){
     event.preventDefault();
     const queryTarget = $(event.currentTarget).find('.text-input');
     user_input = queryTarget.val();
-    queryTarget.val("");
+    //queryTarget.val("");
     getDataFromApi(renderer.displaySearchResult);
   });
 }
@@ -155,13 +181,6 @@ $('.result-div').on('click', '.more-btn', event => {
   getPlayListItems(playlist_input, getPlaylistID);
 });
 
-//play pause for iframe
-/*
-$('.nav-div').on('click', '#play-button', event => {
-  player.playVideo();
-});
-*/
-
 Mousetrap.bind('a b', function(){
   $('.show-key').val('*');
 });
@@ -176,12 +195,7 @@ $('.result-div').on('click', 'img', event => {
   $(event.currentTarget).parent('div').find('iframe').removeClass('hide-it');
 });
 */
-$('.result-div').on('click', 'img', event => {
-	//open video on video-section iframe-div
-	let videoId = $(event.target).attr('videoId');
-	renderer.displayVideoPage(videoId);
-	getRelatedVideoList(videoId, renderer.displayRelatedVideoList);
-});
+
 
 
 $(".result-div").on('keypress', 'img[id^="img"]', event => {
@@ -203,10 +217,10 @@ $(watchSubmit);
 
 
 
-
-
-
-
+	    var tag = document.createElement('script');
+			tag.src = "https://www.youtube.com/iframe_api";
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 
 

@@ -8,6 +8,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 var player;
 
+// *** required ***
 function onYouTubePlayerAPIReady() {
   // create the global player from the specific iframe (#video)
   player = new YT.Player('video', {
@@ -65,17 +66,22 @@ function onYouTubePlayerAPIReady() {
 			<p>${result.snippet.title}</p>
 		`;
 	}
-
+/*
 	function displayVideoPage(videoid){
-		displayVideo(videoid);
+		displayVideo();
 		return;
+	}
+	
+	function displayVideo(){
+		$('.iframe-div').html(`
+	    <iframe id='video'type="text/html" src="https://www.youtube.com/embed/?enablejsapi=1&iv_load_policy=3&showinfo=0&rel=0" frameborder="0" class='ytplayer'></iframe>`);
 	}
 
 	function displayVideo(videoid){
 		$('.iframe-div').html(`
-	    <iframe type="text/html" src="https://www.youtube.com/embed/${videoid}?enablejsapi=1?iv_load_policy=3&showinfo=0&rel=0" frameborder="0" class='ytplayer'></iframe>`);
+	    <iframe id='video'type="text/html" src="https://www.youtube.com/embed/${videoid}?enablejsapi=1&iv_load_policy=3&showinfo=0&rel=0&origin=http://100.33.50.170:50000" frameborder="0" class='ytplayer'></iframe>`);	    
 	}
-
+*/
 	
 
 
@@ -115,7 +121,7 @@ function onYouTubePlayerAPIReady() {
     addPrev: addPrev,
     addPlayNext: addPlayNext,
     addPlayPrev: addPlayPrev,
-		displayVideoPage: displayVideoPage,
+		
 		displayRelatedVideoList: displayRelatedVideoList
   }
 }());

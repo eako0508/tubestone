@@ -37,3 +37,8 @@ input[type=text] {
 .click-btn {
   background-image: url();
 }
+
+#video {
+	width: 560;
+	heigh: 315;
+}
