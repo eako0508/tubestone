@@ -23,7 +23,8 @@
 //Youtube jsapi 
 
 var player;
-var main_videoId = '';
+let main_videoId = '';
+let player_state;
 
 function onYouTubePlayerAPIReady() {
 	console.log('onYouTubePlayerAPIReady');
@@ -39,7 +40,8 @@ function onYouTubePlayerAPIReady() {
 	
 function onStateChange(event){
 	console.log('onStateChange');
-	//console.log(event);
+	player_state = event.data;
+	console.log('state = '+player_state);
 	return;
 }
 
@@ -63,10 +65,40 @@ function onPlayerReady(event){
 	});
 	
 	$('.nav-div').on('click', '#play-button', event => {
-		player.playVideo();
+		if(player_state == 2){	//playing
+  		player.playVideo();
+  	} else if(player_state == 1){
+  		player.pauseVideo();
+  	}
 	});
-	$('.nav-div').on('click', '#pause-button', event => {
-		player.pauseVideo();
+									/** M O U S E  T R A P **/
+	//Play & pause
+	Mousetrap.bind('w', function(){
+  	if(player_state == 2){	//playing
+  		player.playVideo();
+  	} else if(player_state == 1){
+  		player.pauseVideo();
+  	}
+	});
+	//Fullscreen
+	Mousetrap.bind('f', function(){
+  	let elem = $('#video')[0];
+  	if(elem.webkitRequestFullscreen){
+  		elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+  	}
+  	if(document.webkitExitFullscreen){
+  		document.webkitExitFullscreen();
+  	}
+  	return;
+	});
+	Mousetrap.bind('e', function(){
+		player.seekTo(player.getCurrentTime()+5, true);
+	});
+	Mousetrap.bind('q', function(){
+		player.seekTo(player.getCurrentTime()-5, true);
+	});
+	Mousetrap.bind('r', function(){
+		player.seekTo(0, true);
 	});
 }
 /*
@@ -195,9 +227,7 @@ $('.video-related').on('click', '.prev-btn', event => {
 });
 
 
-Mousetrap.bind('a b', function(){
-  $('.show-key').val('*');
-});
+
 
 /*
 $('.result-div').on('click', 'img', event => {

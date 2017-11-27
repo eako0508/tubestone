@@ -1,25 +1,5 @@
 var renderer = (function() {
 
-/*
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-var player;
-
-// *** required ***
-function onYouTubePlayerAPIReady() {
-  // create the global player from the specific iframe (#video)
-  player = new YT.Player('video', {
-    events: {
-      // call this function when player is ready to use
-      'onReady': onPlayerReady
-    }
-  });
-}
-*/
-
 	//Controllers
 	//MAIN
 	//displays search results, including next and previous 
@@ -61,8 +41,6 @@ function onYouTubePlayerAPIReady() {
 		return;
 	}
 
-
-
 	//displays each search results
 	function renderResult(result, index){
 		return `
@@ -78,24 +56,6 @@ function onYouTubePlayerAPIReady() {
 			<p>${result.snippet.title}</p>
 		`;
 	}
-/*
-	function displayVideoPage(videoid){
-		displayVideo();
-		return;
-	}
-	
-	function displayVideo(){
-		$('.iframe-div').html(`
-	    <iframe id='video'type="text/html" src="https://www.youtube.com/embed/?enablejsapi=1&iv_load_policy=3&showinfo=0&rel=0" frameborder="0" class='ytplayer'></iframe>`);
-	}
-
-	function displayVideo(videoid){
-		$('.iframe-div').html(`
-	    <iframe id='video'type="text/html" src="https://www.youtube.com/embed/${videoid}?enablejsapi=1&iv_load_policy=3&showinfo=0&rel=0&origin=http://100.33.50.170:50000" frameborder="0" class='ytplayer'></iframe>`);	    
-	}
-*/
-	
-
 
 /*** Rendering ***/
 	function addNext(){
@@ -118,13 +78,6 @@ function onYouTubePlayerAPIReady() {
 	    <button class='btn prevPlay-btn search-btn'>Prev</button>
 	  `;
 	}
-  
-
-
-
-
-
-
 
   return {
     displaySearchResult: displaySearchResult,
