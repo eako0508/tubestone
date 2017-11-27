@@ -1,10 +1,19 @@
 /**
- * 
- * add feature to remove obstructinos, such as controls or annotation, from video.
- * add buttons for play, pause, next
- * add keyboard shortcuts for easier access
- * 
+ 		** Objectives **
+ * add feature to remove obstructinos, such as controls or annotation, from video (done)
+ * add buttons for play, pause, next (in progress)
+ 		- play/pause key added
+ * add keyboard shortcuts for easier access (in progress)
+ 		- w: play/pause video
+ 		- q: 5 seconds before
+ 		- e: 5 seconds ahead
+ 		- f: full screen 
+ * add percentage skip with 1234 on keyboard
  
+ 
+ 
+ 		** Related Resources **
+ 		
  * mousetrap
  https://craig.is/killing/mice
  
