@@ -23,6 +23,7 @@
 //Youtube jsapi 
 
 var player;
+var main_videoId = '';
 
 function onYouTubePlayerAPIReady() {
 	console.log('onYouTubePlayerAPIReady');
@@ -48,21 +49,18 @@ function onPlayerReady(event){
 	//console.log(event);
 	
 	//event.target.playVideo();
-	$('#test1').click(function(){
-		player.loadVideoById('LSY8P6XdyIU');
-	});
-	
 	$('.result-div').on('click', 'img', event => {
-		//open video on video-section iframe-div
-		let videoId = $(event.target).attr('videoId');
-		//TODO 
-		//inject videoId somehow
-		player.loadVideoById(videoId);
-		//renderer.displayVideoPage(videoId);	removed
-		getRelatedVideoList(videoId, renderer.displayRelatedVideoList);
+		main_videoId = $(event.target).attr('videoId');
+		player.loadVideoById(main_videoId);
+		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
 	});
-	
-	
+		
+	$('.video-related').on('click', 'img', event => {
+		//open video on video-section iframe-div
+		main_videoId = $(event.target).attr('videoId');
+		player.loadVideoById(main_videoId);
+		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
+	});
 	
 	$('.nav-div').on('click', '#play-button', event => {
 		player.playVideo();
@@ -85,6 +83,11 @@ let next_token = '';
 let prev_token = '';
 let query_token = '';
 let playlist_input = '';
+
+let sub_query_token = '';
+let sub_next_token = '';
+let sub_prev_token = '';
+
 let apikey = 'AIzaSyCT2DvM71hl86EH50zbLazdwD5PPsbYZzo';
 
 const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
@@ -93,7 +96,7 @@ const YOUTUBE_CHANNELS_URL = 'https://www.googleapis.com/youtube/v3/channels';
 const YOUTUBE_PLAYLISTS_URL = 'https://www.googleapis.com/youtube/v3/playlistItems';
 const YOUTUBE_URL = 'https://www.googleapis.com/youtube/v3';
 
-/** Query builder **/
+				/** Query builder **/
 function getDataFromApi(callback){
   const query = {
     part: 'snippet',
@@ -128,23 +131,20 @@ function getPlaylistID(data){
   getVideos(_playlistId, displayPlaylists);
 }
 
-
-
-
-
 function getRelatedVideoList(videoId, callback){
 	const query = {
 		part: 'snippet',
 		key: apikey,
 		type: 'video',
-		relatedToVideoId: videoId
+		relatedToVideoId: videoId,
+		pageToken: sub_query_token
 	}
 	$.getJSON(YOUTUBE_SEARCH_URL, query, callback);
 	return;
 }
 
 
-/** Event listener **/
+																/** Event listener **/
 function watchSubmit(){
   // Confirm that separate object work
   $('.search-form').submit(event=>{
@@ -155,6 +155,7 @@ function watchSubmit(){
     getDataFromApi(renderer.displaySearchResult);
   });
 }
+		/** Primary search **/
 $('.result-div').on('click', '.next-btn', event => {
   query_token = next_token;
   getDataFromApi(renderer.displaySearchResult);
@@ -181,13 +182,22 @@ $('.result-div').on('click', '.more-btn', event => {
   getPlayListItems(playlist_input, getPlaylistID);
 });
 
-Mousetrap.bind('a b', function(){
-  $('.show-key').val('*');
+		/** Related search **/
+$('.video-related').on('click', '.next-btn', event => {
+  sub_query_token = sub_next_token;
+  getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
+  sub_next_token = '';
+});
+$('.video-related').on('click', '.prev-btn', event => {
+  sub_query_token = sub_prev_token;
+  getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
+  sub_prev_token = '';
 });
 
 
-
-
+Mousetrap.bind('a b', function(){
+  $('.show-key').val('*');
+});
 
 /*
 $('.result-div').on('click', 'img', event => {
@@ -195,8 +205,6 @@ $('.result-div').on('click', 'img', event => {
   $(event.currentTarget).parent('div').find('iframe').removeClass('hide-it');
 });
 */
-
-
 
 $(".result-div").on('keypress', 'img[id^="img"]', event => {
   console.log(event);
@@ -206,21 +214,12 @@ $(".result-div").on('keypress', 'img[id^="img"]', event => {
   }
 });
 
-
-
-
-
-
-
-
 $(watchSubmit);
 
-
-
-	    var tag = document.createElement('script');
-			tag.src = "https://www.youtube.com/iframe_api";
-			var firstScriptTag = document.getElementsByTagName('script')[0];
-			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 
 

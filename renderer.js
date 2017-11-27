@@ -25,7 +25,7 @@ function onYouTubePlayerAPIReady() {
 	//displays search results, including next and previous 
   function displaySearchResult(data){
 		//displays search keyword
-	  $('.result-head').html(`<h1>Results for '${user_input.toUpperCase()}' - Total results: ${data.pageInfo.totalResults}</h1>`);
+	  //$('.result-head').html(`<h1>Results for '${user_input.toUpperCase()}' - Total results: ${data.pageInfo.totalResults}</h1>`);
 	 
 		//displays each search items 
 	  const results = data.items.map((item, index) => renderResult(item, index));
@@ -45,6 +45,18 @@ function onYouTubePlayerAPIReady() {
 	function displayRelatedVideoList(data){
 		const result = data.items.map((item, index) => renderList(item, index));
 		$('.video-related').html(result);
+		/*
+		sub_query_toekn = data.nextPageToken;
+		console.log(sub_query_toekn);
+		*/
+		if(typeof data.prevPageToken !== 'undefined'){
+	    $('.video-related').append(addPrev);
+	    sub_prev_token = data.prevPageToken;
+	  }
+	  if(typeof data.nextPageToken !== 'undefined'){
+	    $('.video-related').append(addNext);
+	    sub_next_token = data.nextPageToken;
+	  }
 		
 		return;
 	}
