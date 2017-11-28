@@ -8,8 +8,11 @@
  		- q: 5 seconds before
  		- e: 5 seconds ahead
  		- f: full screen 
- * add percentage skip with 1234 on keyboard
- 
+ * add percentage skip with 1234 on keyboard (done)
+ 		- 1 2 3 4 5 keys that skips 1/6
+ * disable youtube iframe for keyboard shortcut 
+ 		because above keys doens't work after clicking youtube video.
+ * show/hide
  
  
  		** Related Resources **
@@ -29,7 +32,7 @@
 */
 
 
-//Youtube jsapi 
+									/** I F R A M E  P L A Y E R **/
 
 var player;
 let main_videoId = '';
@@ -81,15 +84,31 @@ function onPlayerReady(event){
   	}
 	});
 									/** M O U S E  T R A P **/
-	//Play & pause
+			//Play & pause 
+			//key: w
+	/*
 	Mousetrap.bind('w', function(){
   	if(player_state == 2){	//playing
   		player.playVideo();
-  	} else if(player_state == 1){
+  	} else if(player_state == 1){ //paused
   		player.pauseVideo();
   	}
 	});
-	//Fullscreen
+	*/
+	document.addEventListener('keydown', function(e){
+		switch(e.keyCode){
+			case 87:	//ascii for 'W'
+				e.preventDefault();
+				if(player_state == 2){	//playing
+		  		player.playVideo();
+		  	} else if(player_state == 1){	//paused
+		  		player.pauseVideo();
+		  	}
+		  	break;
+		}
+	}, false);
+			//Fullscreen 
+			//key: f
 	Mousetrap.bind('f', function(){
   	let elem = $('#video')[0];
   	if(elem.webkitRequestFullscreen){
@@ -100,12 +119,33 @@ function onPlayerReady(event){
   	}
   	return;
 	});
+			//Skip 5 seconds 
+			//key: e, q
 	Mousetrap.bind('e', function(){
 		player.seekTo(player.getCurrentTime()+5, true);
 	});
 	Mousetrap.bind('q', function(){
 		player.seekTo(player.getCurrentTime()-5, true);
 	});
+			//Skip percentage with 
+			//key: 1 2 3 4 5
+	Mousetrap.bind('1', function(){
+		player.seekTo(player.getDuration()/6, true);
+	});
+	Mousetrap.bind('2', function(){
+		player.seekTo(player.getDuration()/6*2, true);
+	});
+	Mousetrap.bind('3', function(){
+		player.seekTo(player.getDuration()/6*3, true);
+	});
+	Mousetrap.bind('4', function(){
+		player.seekTo(player.getDuration()/6*4, true);
+	});
+	Mousetrap.bind('5', function(){
+		player.seekTo(player.getDuration()/6*5, true);
+	});
+			//replay video 
+			//key: r
 	Mousetrap.bind('r', function(){
 		player.seekTo(0, true);
 	});
@@ -118,7 +158,7 @@ playerVars: {
 }
 */
 
-/** Global variables **/
+									/** GLOBAL VARIABLES **/
 let user_input = '';
 let next_token = '';
 let prev_token = '';
@@ -132,10 +172,11 @@ let sub_prev_token = '';
 let apikey = 'AIzaSyCT2DvM71hl86EH50zbLazdwD5PPsbYZzo';
 
 const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
-const YOUTUBE_VIDEOS_URL = 'https://www.googleapis.com/youtube/v3/videos';
 const YOUTUBE_CHANNELS_URL = 'https://www.googleapis.com/youtube/v3/channels';
 const YOUTUBE_PLAYLISTS_URL = 'https://www.googleapis.com/youtube/v3/playlistItems';
-const YOUTUBE_URL = 'https://www.googleapis.com/youtube/v3';
+
+//const YOUTUBE_VIDEOS_URL = 'https://www.googleapis.com/youtube/v3/videos';
+//const YOUTUBE_URL = 'https://www.googleapis.com/youtube/v3';
 
 				/** Query builder **/
 function getDataFromApi(callback){
@@ -255,6 +296,8 @@ $(".result-div").on('keypress', 'img[id^="img"]', event => {
 
 $(watchSubmit);
 
+
+								/**	Iframe Async API Load sequence	**/
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
