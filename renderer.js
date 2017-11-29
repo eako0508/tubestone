@@ -52,8 +52,10 @@ var renderer = (function() {
 	}
 	function renderList(result, index){
 		return `
+			<div class='search-result'>
 			<img id='img-${index}' src='${result.snippet.thumbnails.default.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
 			<p>${result.snippet.title}</p>
+			</div>
 		`;
 	}
 

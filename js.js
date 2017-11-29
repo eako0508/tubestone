@@ -67,6 +67,10 @@ function onPlayerReady(event){
 		main_videoId = $(event.target).attr('videoId');
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
+		
+		
+    $('html, body').animate({ scrollTop: $('.iframe-div').offset().top - 20});
+		
 	});
 		
 	$('.video-related').on('click', 'img', event => {
@@ -86,7 +90,7 @@ function onPlayerReady(event){
 									/** M O U S E  T R A P **/
 			//Play & pause 
 			//key: w
-	/*
+	
 	Mousetrap.bind('w', function(){
   	if(player_state == 2){	//playing
   		player.playVideo();
@@ -94,7 +98,7 @@ function onPlayerReady(event){
   		player.pauseVideo();
   	}
 	});
-	*/
+	/*
 	document.addEventListener('keydown', function(e){
 		switch(e.keyCode){
 			case 87:	//ascii for 'W'
@@ -107,6 +111,7 @@ function onPlayerReady(event){
 		  	break;
 		}
 	}, false);
+	*/
 			//Fullscreen 
 			//key: f
 	Mousetrap.bind('f', function(){
@@ -219,7 +224,8 @@ function getRelatedVideoList(videoId, callback){
 		key: apikey,
 		type: 'video',
 		relatedToVideoId: videoId,
-		pageToken: sub_query_token
+		pageToken: sub_query_token,
+		maxResults: 10
 	}
 	$.getJSON(YOUTUBE_SEARCH_URL, query, callback);
 	return;
@@ -262,6 +268,9 @@ $('.result-div').on('click', '.more-btn', event => {
   const curr_val = $(event.currentTarget).attr('value');
   playlist_input = curr_val;
   getPlayListItems(playlist_input, getPlaylistID);
+});
+$('#top').on('click', function(){
+	$('html, body').animate({ scrollTop: $('.search-section').offset().top});
 });
 
 		/** Related search **/
