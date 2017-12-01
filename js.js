@@ -39,7 +39,7 @@ let main_videoId = '';
 let player_state;
 
 function onYouTubePlayerAPIReady() {
-	console.log('onYouTubePlayerAPIReady');
+	//console.log('onYouTubePlayerAPIReady');
   // create the global player from the specific iframe (#video)
   player = new YT.Player('video', {
     events: {
@@ -51,15 +51,15 @@ function onYouTubePlayerAPIReady() {
 }
 	
 function onStateChange(event){
-	console.log('onStateChange');
+	//console.log('onStateChange');
 	player_state = event.data;
-	console.log('state = '+player_state);
+	//console.log('state = '+player_state);
 	return;
 }
 
 function onPlayerReady(event){
 	
-	console.log('onPlayerReady !');
+	//console.log('onPlayerReady !');
 	//console.log(event);
 	
 	//event.target.playVideo();
@@ -190,7 +190,8 @@ function getDataFromApi(callback){
     key: apikey,
     type: 'video',
     q: user_input,
-    pageToken: query_token
+    pageToken: query_token,
+    maxResults: 10
   };
   $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
   pageToken = '';
@@ -234,6 +235,8 @@ function getRelatedVideoList(videoId, callback){
 
 																/** Event listener **/
 function watchSubmit(){
+	$('html, body').animate({ scrollTop: $('.search-section').offset().top});
+	
   // Confirm that separate object work
   $('.search-form').submit(event=>{
     event.preventDefault();
@@ -296,7 +299,7 @@ $('.result-div').on('click', 'img', event => {
 */
 
 $(".result-div").on('keypress', 'img[id^="img"]', event => {
-  console.log(event);
+  //console.log(event);
   if(event.which === 13){
     $(event.currentTarget).addClass('hide-it');
     $(event.currentTarget).parent('div').find('iframe').removeClass('hide-it');  
