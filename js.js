@@ -69,11 +69,11 @@ function onPlayerReady(event){
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
 		
 		
-    $('html, body').animate({ scrollTop: $('.iframe-div').offset().top - 20});
+    $('html, body').animate({ scrollTop: $('.video-container').offset().top - 20});
 		
 	});
 		
-	$('.video-related').on('click', 'img', event => {
+	$('.video_related').on('click', 'img', event => {
 		//open video on video-section iframe-div
 		main_videoId = $(event.target).attr('videoId');
 		player.loadVideoById(main_videoId);
