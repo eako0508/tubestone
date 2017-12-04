@@ -46,7 +46,7 @@ var renderer = (function() {
 		return `
 			<div class='search-result'>
 			<img id='img-${index}' src='${result.snippet.thumbnails.default.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
-			<p>${result.snippet.title}</p>
+			<p id='p-${result.id.videoId}'>${result.snippet.title}</p>
 			</div>
 		`;
 	}
@@ -54,7 +54,7 @@ var renderer = (function() {
 		return `
 			<div class='search-result'>
 			<img id='img-${index}' src='${result.snippet.thumbnails.default.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
-			<p>${result.snippet.title}</p>
+			<p id='p-${result.id.videoId}'>${result.snippet.title}</p>
 			</div>
 		`;
 	}

@@ -39,7 +39,6 @@ let main_videoId = '';
 let player_state;
 
 function onYouTubePlayerAPIReady() {
-	//console.log('onYouTubePlayerAPIReady');
   // create the global player from the specific iframe (#video)
   player = new YT.Player('video', {
     events: {
@@ -51,29 +50,25 @@ function onYouTubePlayerAPIReady() {
 }
 	
 function onStateChange(event){
-	//console.log('onStateChange');
 	player_state = event.data;
-	//console.log('state = '+player_state);
 	return;
 }
 
 function onPlayerReady(event){
 	
-	//console.log('onPlayerReady !');
-	//console.log(event);
-	
-	//event.target.playVideo();
 	$('.result-div').on('click', 'img', event => {
 		main_videoId = $(event.target).attr('videoId');
+		let temp = $(`#p-${main_videoId}`).text();
+		$('#current_title').text(temp);
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
 		
 		
-    $('html, body').animate({ scrollTop: $('.video-container').offset().top - 20});
+    $('html, body').animate({ scrollTop: $('.iframe-div').offset().top - 50});
 		
 	});
 		
-	$('.video_related').on('click', 'img', event => {
+	$('.video-related').on('click', 'img', event => {
 		//open video on video-section iframe-div
 		main_videoId = $(event.target).attr('videoId');
 		player.loadVideoById(main_videoId);
@@ -90,7 +85,6 @@ function onPlayerReady(event){
 									/** M O U S E  T R A P **/
 			//Play & pause 
 			//key: w
-	
 	Mousetrap.bind('w', function(){
   	if(player_state == 2){	//playing
   		player.playVideo();
@@ -98,20 +92,6 @@ function onPlayerReady(event){
   		player.pauseVideo();
   	}
 	});
-	/*
-	document.addEventListener('keydown', function(e){
-		switch(e.keyCode){
-			case 87:	//ascii for 'W'
-				e.preventDefault();
-				if(player_state == 2){	//playing
-		  		player.playVideo();
-		  	} else if(player_state == 1){	//paused
-		  		player.pauseVideo();
-		  	}
-		  	break;
-		}
-	}, false);
-	*/
 			//Fullscreen 
 			//key: f
 	Mousetrap.bind('f', function(){
@@ -124,31 +104,61 @@ function onPlayerReady(event){
   	}
   	return;
 	});
-			//Skip 5 seconds 
-			//key: e, q
-	Mousetrap.bind('e', function(){
-		player.seekTo(player.getCurrentTime()+5, true);
-	});
-	Mousetrap.bind('q', function(){
-		player.seekTo(player.getCurrentTime()-5, true);
-	});
-			//Skip percentage with 
-			//key: 1 2 3 4 5
+	/*
+			Skip 5 10 seconds with 1 2 3 4
+			key: 
+				1: -10 sec
+				2: - 5 sec
+				3: + 5 sec
+				4: +10 sec
+	*/
 	Mousetrap.bind('1', function(){
-		player.seekTo(player.getDuration()/6, true);
+		player.seekTo(player.getCurrentTime()-10, true);
 	});
 	Mousetrap.bind('2', function(){
-		player.seekTo(player.getDuration()/6*2, true);
+		player.seekTo(player.getCurrentTime()-5, true);
 	});
 	Mousetrap.bind('3', function(){
-		player.seekTo(player.getDuration()/6*3, true);
+		player.seekTo(player.getCurrentTime()+5, true);
 	});
 	Mousetrap.bind('4', function(){
-		player.seekTo(player.getDuration()/6*4, true);
+		player.seekTo(player.getCurrentTime()+10, true);
 	});
-	Mousetrap.bind('5', function(){
-		player.seekTo(player.getDuration()/6*5, true);
+	
+	
+	Mousetrap.bind('q', function(){
+		let curr_vol = player.getVolume();
+		console.log('lower volume')
+		console.log(curr_vol);
+		if(curr_vol < 5){
+			player.mute();
+		} else{
+			player.unMute();
+			player.setVolume(curr_vol-5);
+		}
 	});
+	
+	Mousetrap.bind('e', function(){
+		let curr_vol = player.getVolume();
+		console.log('increase volume')
+		console.log(curr_vol);
+		player.unMute();
+		if(curr_vol > 95){
+			player.setVolume(100);
+		} else{
+			player.setVolume(curr_vol+5);
+		}
+	});
+	Mousetrap.bind('z', function(){
+		console.log('lower volume');
+		console.log('is muted?: '+player.isMuted());
+		if(player.isMuted()){
+			player.unMute();
+		} else{
+			player.mute();
+		}
+	});
+	
 			//replay video 
 			//key: r
 	Mousetrap.bind('r', function(){
@@ -234,8 +244,9 @@ function getRelatedVideoList(videoId, callback){
 
 
 																/** Event listener **/
+
 function watchSubmit(){
-	$('html, body').animate({ scrollTop: $('.search-section').offset().top});
+	$('html, body').animate({ scrollTop: $('.result-section').offset().top});
 	
   // Confirm that separate object work
   $('.search-form').submit(event=>{
@@ -246,6 +257,10 @@ function watchSubmit(){
     getDataFromApi(renderer.displaySearchResult);
   });
 }
+
+
+
+
 		/** Primary search **/
 $('.result-div').on('click', '.next-btn', event => {
   query_token = next_token;
@@ -273,7 +288,8 @@ $('.result-div').on('click', '.more-btn', event => {
   getPlayListItems(playlist_input, getPlaylistID);
 });
 $('#top').on('click', function(){
-	$('html, body').animate({ scrollTop: $('.search-section').offset().top});
+	$('html, body').animate({ scrollTop: 0});
+
 });
 
 		/** Related search **/
