@@ -18,18 +18,10 @@
   display: none;
 }
 section {
-	/*
-	padding-left: 20px;
-  padding-right: 20px;
-  */
   margin: 0 auto;
   margin-bottom: 1%;
 }
-/*
-.container{
-	padding-top: 1% 0;
-}
-*/
+
 .video-list{
 	font-weight: bold;
 	margin: 0;
@@ -88,9 +80,6 @@ input[type=text] {
 	text-align: center;
 }
 iframe {
-	/*
-	padding-bottom: 25%;
-	*/
 	width: 500px;
 	height: 280px;
 }
