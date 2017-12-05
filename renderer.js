@@ -40,17 +40,30 @@ var renderer = (function() {
 		
 		return;
 	}
-
+/*
+	function reduce_title(str){
+		
+		//reduce to ?? characters
+		
+		
+		
+		return str.substring(0,20);
+	}
+*/
 	//displays each search results
 	function renderResult(result, index){
+		let temp_title = result.snippet.title.substring(0,50);
+		//<p id='p-${result.id.videoId}'>${temp_title}</p>
 		return `
 			<div class='search-result'>
 			<img id='img-${index}' src='${result.snippet.thumbnails.default.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
-			<p id='p-${result.id.videoId}'>${result.snippet.title}</p>
+			<p id='p-${result.id.videoId}'>${temp_title}</p>
+			
 			</div>
 		`;
 	}
 	function renderList(result, index){
+		console.log(result.snippet.title.length);
 		return `
 			<div class='search-result'>
 			<img id='img-${index}' src='${result.snippet.thumbnails.default.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>

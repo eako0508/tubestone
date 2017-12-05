@@ -1,3 +1,15 @@
+			/**
+			TODO
+				1. implement mobile view & desktop view
+					a. hide search and top button
+					b. strech each search results to 1 row
+					
+				2. change aspect ratio of iframe dynamically with 4:3 
+			
+			**/
+			
+			
+			
 			/* G L O B A L   P R O P E R T I E S */
 * {
 	box-sizing: border-box;
@@ -16,7 +28,9 @@ section {
 .container{
 	padding-top: 1% 0;
 }
-
+.video-list{
+	font-weight: bold;
+}
 			/* From top to bottom*/
 			
 			/* S E A R C H   S E C T I O N */
@@ -36,6 +50,9 @@ input[type=text] {
 .search-btn {
 
 }
+.toggle-result {
+	
+}
 			/* R E S U L T   S E C T I O N */
 .result-section {
 	background-color: #eeeeee;
@@ -54,7 +71,7 @@ input[type=text] {
 
 				/* V I D E O    S E C T I O N */
 .video-section {
-	
+	margin-top: 90px;
 }
 .iframe-div {
 	background-color: orange;

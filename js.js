@@ -13,6 +13,8 @@
  * disable youtube iframe for keyboard shortcut 
  		because above keys doens't work after clicking youtube video.
  * show/hide
+  
+ * Reduce title string for each block
  
  
  		** Related Resources **
@@ -62,9 +64,9 @@ function onPlayerReady(event){
 		$('#current_title').text(temp);
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
+		$('.result-section').toggle('hide');
 		
-		
-    $('html, body').animate({ scrollTop: $('.iframe-div').offset().top - 50});
+    //$('html, body').animate({ scrollTop: $('.iframe-div').offset().top - 50});
 		
 	});
 		
@@ -255,10 +257,13 @@ function watchSubmit(){
     user_input = queryTarget.val();
     //queryTarget.val("");
     getDataFromApi(renderer.displaySearchResult);
+    $('.result-section').toggle('hide');
   });
 }
 
-
+$('.toggle-result').on('click', event =>{
+	$('.result-section').toggle('hide');
+});
 
 
 		/** Primary search **/
