@@ -56,8 +56,8 @@ var renderer = (function() {
 		//<p id='p-${result.id.videoId}'>${temp_title}</p>
 		return `
 			<div class='search-result'>
-			<img id='img-${index}' src='${result.snippet.thumbnails.default.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
-			<p id='p-${result.id.videoId}'>${temp_title}</p>
+			<img class='result-img' id='img-${index}' src='${result.snippet.thumbnails.default.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
+			<p id='p-${result.id.videoId}' class='result-p'>${temp_title}</p>
 			
 			</div>
 		`;
@@ -66,8 +66,8 @@ var renderer = (function() {
 		console.log(result.snippet.title.length);
 		return `
 			<div class='search-result'>
-			<img id='img-${index}' src='${result.snippet.thumbnails.default.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
-			<p id='p-${result.id.videoId}'>${result.snippet.title}</p>
+			<img class='result-img' id='img-${index}' src='${result.snippet.thumbnails.default.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
+			<p id='p-${result.id.videoId}' class='result-p'>${result.snippet.title}</p>
 			</div>
 		`;
 	}

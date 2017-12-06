@@ -330,6 +330,15 @@ $(".result-div").on('keypress', 'img[id^="img"]', event => {
 $(watchSubmit);
 
 
+function resol(){
+	const hh = $(window).height();
+	const ww = $(window).width();
+	$('.res').text('height: '+hh+', width: '+ww);
+	return;
+}
+
+$(resol);
+
 								/**	Iframe Async API Load sequence	**/
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";

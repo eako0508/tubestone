@@ -3,9 +3,14 @@
 				1. implement mobile view & desktop view
 					a. hide search and top button
 					b. strech each search results to 1 row
+					** my iphone is iphone 5, 568 x 320
 					
 				2. change aspect ratio of iframe dynamically with 4:3 
-			
+				
+				
+				
+				Was working on responsive grid for iphone5
+				
 			**/
 			
 			
@@ -43,7 +48,7 @@ header {
 	font-size: x-large;
 }
 input[type=text] {
-  width: 450px;
+  width: 350px;
   padding: 2px 3px;
 }
 .search-btn {
@@ -53,6 +58,11 @@ input[type=text] {
 	position: absolute;
 	top: 32px;
 	right: 20px;
+}
+.inst {
+	position: absolute;
+	top: 32px;
+	right: 130px;
 }
 			/* R E S U L T   S E C T I O N */
 .result-section {
@@ -66,7 +76,7 @@ input[type=text] {
 .search-result {
 	display: inline-block;
 	width: 300px;
-	height: 150px;
+	height: 100px;
 	float: left;
 }
 
@@ -134,12 +144,99 @@ footer {
 	
 	width: 100%;
 }
-
-@media only screen and (min-width: 640px){
-	.col-6 {
-		width: 50%;
+.result-img {
+	float: left;
+}
+.result-p {
+	
+}
+@media only screen and (max-width: 320px){	
+	/*when the screen is smaller than 640px*/
+	body {
+		margin: 0;
 	}
-	.col-12 {
+	section {
+		margin: 0;
+	}
+	
+	.col-6, .col-12 {
+		float: left;
+		padding-left: 0;
+		padding-right: 0;
 		width: 100%;
 	}
+	.inst {
+		display: none;
+	}
+	.search-result {
+		width: 100%;
+	}
+	.result-p{
+		
+	}
+	.result-img{
+		float: left;
+	}
+	.toggle-result{
+		position: relative;
+		top: 0;
+		right: 0;
+	}
+	input[type=text]{
+		width: 250px;
+	}
+	iframe {
+		width: 300px;
+		height: 225px;
+	}
+}
+
+@media only screen and (max-width: 900px){
+	/*when the screen is smaller than 640px*/
+	body {
+		margin: 0;
+	}
+	section {
+		margin: 0;
+	}
+	
+	.col-6, .col-12 {
+		float: left;
+		padding-left: 0;
+		padding-right: 0;
+		width: 100%;
+	}
+	.inst {
+		display: none;
+	}
+	.search-result {
+		width: 100%;
+	}
+	.result-p{
+		
+	}
+	.result-img{
+		float: left;
+	}
+	.toggle-result{
+		position: relative;
+		top: 0;
+		right: 0;
+	}
+	input[type=text]{
+		width: 250px;
+	}
+	iframe {
+		width: 300px;
+		height: 225px;
+	}
+}
+
+.test1 {
+	background-color: white;
+	width: 300px;
+	padding: 10px;
+}
+.test1 h2 {
+	text-align: center;
 }
