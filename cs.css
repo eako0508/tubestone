@@ -67,7 +67,7 @@ input[type=text] {
 			/* R E S U L T   S E C T I O N */
 .result-section {
 	background-color: #eeeeee;
-	height: 350px;
+	//height: 350px;
 	overflow: auto;
 	margin-top: 10px;
 	padding-top: 10px;
@@ -239,4 +239,31 @@ footer {
 }
 .test1 h2 {
 	text-align: center;
+}
+
+.result-div {
+	
+}
+
+.page-btn {
+	
+}
+
+ .page-btn::before, .page-btn::after {
+	visibility: hidden;
+	display: table;
+	content: "";
+}
+
+
+.button-container {
+	clear: left;
+}
+
+.next-btn {
+	
+}
+
+.prev-btn {
+	
 }

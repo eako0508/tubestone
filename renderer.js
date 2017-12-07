@@ -11,6 +11,20 @@ var renderer = (function() {
 	  const results = data.items.map((item, index) => renderResult(item, index));
 	  $('.result-div').html(results);
 	  
+	  $('.result-div').append(`
+	  	<div class='button-container s-btn-container'></div>
+	  `);
+	  
+	  //Display next & prev button
+	  if(typeof data.prevPageToken !== 'undefined'){
+	    $('.s-btn-container ').append(addPrev);
+	    prev_token = data.prevPageToken;
+	  }
+	  if(typeof data.nextPageToken !== 'undefined'){
+	    $('.s-btn-container').append(addNext);
+	    next_token = data.nextPageToken;
+	  }
+	  /*
 	  //Display next & prev button
 	  if(typeof data.prevPageToken !== 'undefined'){
 	    $('.result-div').append(addPrev);
@@ -20,15 +34,31 @@ var renderer = (function() {
 	    $('.result-div').append(addNext);
 	    next_token = data.nextPageToken;
 	  }
+	  */
+	  
 	}
 
 	function displayRelatedVideoList(data){
+		
 		const result = data.items.map((item, index) => renderList(item, index));
 		$('.video-related').html(result);
 		/*
 		sub_query_toekn = data.nextPageToken;
 		console.log(sub_query_toekn);
 		*/
+		
+	  $('.video-related').append(`
+	  	<div class='button-container rel-btn-container'></div>
+	  `);
+	  if(typeof data.prevPageToken !== 'undefined'){
+	    $('.rel-btn-container').append(addPrev);
+	    sub_prev_token = data.prevPageToken;
+	  }
+	  if(typeof data.nextPageToken !== 'undefined'){
+	    $('.rel-btn-container').append(addNext);
+	    sub_next_token = data.nextPageToken;
+	  }
+	  /*
 		if(typeof data.prevPageToken !== 'undefined'){
 	    $('.video-related').append(addPrev);
 	    sub_prev_token = data.prevPageToken;
@@ -37,19 +67,10 @@ var renderer = (function() {
 	    $('.video-related').append(addNext);
 	    sub_next_token = data.nextPageToken;
 	  }
-		
+		*/
 		return;
 	}
-/*
-	function reduce_title(str){
-		
-		//reduce to ?? characters
-		
-		
-		
-		return str.substring(0,20);
-	}
-*/
+
 	//displays each search results
 	function renderResult(result, index){
 		let temp_title = result.snippet.title.substring(0,50);
@@ -63,7 +84,7 @@ var renderer = (function() {
 		`;
 	}
 	function renderList(result, index){
-		console.log(result.snippet.title.length);
+		//console.log(result.snippet.title.length);
 		return `
 			<div class='search-result'>
 			<img class='result-img' id='img-${index}' src='${result.snippet.thumbnails.default.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
@@ -75,22 +96,22 @@ var renderer = (function() {
 /*** Rendering ***/
 	function addNext(){
 	  return `
-	    <button class='btn next-btn search-btn'>Next</button>
+	    <button class='btn page-btn next-btn'>Next</button>
 	  `;
 	}
 	function addPrev(){
 	  return `
-	    <button class='btn prev-btn search-btn'>Prev</button>
+	    <button class='btn page-btn prev-btn'>Prev</button>
 	  `;
 	}
 	function addPlayNext(){
 	  return `
-	    <button class='btn nextPlay-btn search-btn'>Next</button>
+	    <button class='btn page-btn nextPlay-btn'>Next</button>
 	  `;
 	}
 	function addPlayPrev(){
 	  return `
-	    <button class='btn prevPlay-btn search-btn'>Prev</button>
+	    <button class='btn page-btn prevPlay-btn'>Prev</button>
 	  `;
 	}
 
@@ -105,12 +126,3 @@ var renderer = (function() {
 		displayRelatedVideoList: displayRelatedVideoList
   }
 }());
-  
-  
-	  /* iframe snippet 
-	    <iframe type="text/html"
-	  src="https://www.youtube.com/embed/${result.id.videoId}?iv_load_policy=3&showinfo=0&rel=0"
-	  frameborder="0" class='hide-it ytplayer'></iframe>
-	  
-	    <button class='more-btn' value='${result.snippet.channelId}' aria-hidden='true'>More from uploader</button>
-*/
