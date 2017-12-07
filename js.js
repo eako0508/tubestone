@@ -267,7 +267,8 @@ function watchSubmit(){
     user_input = queryTarget.val();
     //queryTarget.val("");
     getDataFromApi(renderer.displaySearchResult);
-    $('.result-section').toggle('hide');
+    $('.result-section').removeClass('hide');
+    $('.text-input').blur();
   });
 }
 
@@ -302,7 +303,7 @@ $('.result-div').on('click', '.more-btn', event => {
   playlist_input = curr_val;
   getPlayListItems(playlist_input, getPlaylistID);
 });
-$('#top').on('click', function(){
+$('.top-btn').on('click', function(){
 	$('html, body').animate({ scrollTop: 0});
 
 });
