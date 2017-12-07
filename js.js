@@ -14,7 +14,11 @@
  		because above keys doens't work after clicking youtube video.
  * show/hide
   
- * Reduce title string for each block
+ * Reduce title string for each block (70 words or less)
+ 
+ * add shortcuts to search result and/or related video (maybe key combination)
+ 
+ * add user customizable shortcut??
  
  
  		** Related Resources **
@@ -166,6 +170,12 @@ function onPlayerReady(event){
 	Mousetrap.bind('r', function(){
 		player.seekTo(0, true);
 	});
+	
+			//toggle search results
+			//key: t
+	Mousetrap.bind('t', function(){
+		$('.result-section').toggle('hide');
+	});
 }
 /*
 playerVars: {
@@ -203,7 +213,7 @@ function getDataFromApi(callback){
     type: 'video',
     q: user_input,
     pageToken: query_token,
-    maxResults: 10
+    maxResults: 9
   };
   $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
   pageToken = '';
@@ -238,7 +248,7 @@ function getRelatedVideoList(videoId, callback){
 		type: 'video',
 		relatedToVideoId: videoId,
 		pageToken: sub_query_token,
-		maxResults: 10
+		maxResults: 5
 	}
 	$.getJSON(YOUTUBE_SEARCH_URL, query, callback);
 	return;

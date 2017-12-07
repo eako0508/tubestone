@@ -19,6 +19,9 @@
 * {
 	box-sizing: border-box;
 }
+body {
+	background-color: tan;
+}
 .hide	 {
   display: none;
 }
@@ -41,7 +44,7 @@ header {
 	left: 0;
 	width: 100%;
 	clear: both;
-	background-color: orange;
+	background-color: darkgoldenrod;
 	padding: 5px 20px;
 }
 .search-span{
@@ -86,7 +89,7 @@ input[type=text] {
 	margin-top: 70px;
 }
 .iframe-div {
-	background-color: orange;
+	background-color: antiquewhite;
 	text-align: center;
 }
 iframe {
@@ -99,10 +102,11 @@ iframe {
 	clear: both;
 }
 .video-related {
-	background-color: #eeefff;
+	background-color: tan;
 	margin-bottom: 10px;
-	height: 470px;
+	height: auto;
 	overflow: auto;
+	padding-top: 10px;
 }
 
 
@@ -150,8 +154,9 @@ footer {
 .result-p {
 	
 }
+/*
 @media only screen and (max-width: 320px){	
-	/*when the screen is smaller than 640px*/
+	
 	body {
 		margin: 0;
 	}
@@ -190,7 +195,7 @@ footer {
 		height: 225px;
 	}
 }
-
+*/
 @media only screen and (max-width: 900px){
 	/*when the screen is smaller than 640px*/
 	body {
@@ -205,6 +210,7 @@ footer {
 		padding-left: 0;
 		padding-right: 0;
 		width: 100%;
+		height: 300px;
 	}
 	.inst {
 		display: none;
@@ -229,6 +235,24 @@ footer {
 	iframe {
 		width: 300px;
 		height: 225px;
+	}
+	.video-related {
+		overflow: hidden;
+		height: auto;
+		margin-bottom: 30px;
+	}
+	.next-btn,
+	.prev-btn {
+		position: relative;
+	}
+	.rel-btn-container {
+		//margin-bottom: 30px;
+	}
+	.next-btn {
+		right:0;
+	}
+	.page-btn {
+		width: 50%;
 	}
 }
 
@@ -246,7 +270,9 @@ footer {
 }
 
 .page-btn {
-	
+	width: 50%;
+	height: 80px;
+	bottom: 0;
 }
 
  .page-btn::before, .page-btn::after {
@@ -258,12 +284,25 @@ footer {
 
 .button-container {
 	clear: left;
+	height: 120px;
+	position: relative;
 }
 
 .next-btn {
-	
+	position: absolute;
+	right: 0;
 }
 
 .prev-btn {
-	
+	position: absolute;
+	left: 0;
+}
+
+.rel-btn-container {
+	padding-top: 40px;
+	height: 100px;
+}
+
+.s-btn-container {
+	height: 90px;
 }
