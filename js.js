@@ -60,6 +60,14 @@ function onStateChange(event){
 	return;
 }
 
+function toggleHide(){
+	if($('.result-section').hasClass('hide')){
+  	$('.result-section').removeClass('hide');
+  } else {
+  	$('.result-section').addClass('hide');
+  }
+}
+
 function onPlayerReady(event){
 	
 	$('.result-div').on('click', 'img', event => {
@@ -68,7 +76,8 @@ function onPlayerReady(event){
 		$('#current_title').text(temp);
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
-		$('.result-section').toggle('hide');
+		//$('.result-section').toggle('hide');
+		toggleHide();
 		
     //$('html, body').animate({ scrollTop: $('.iframe-div').offset().top - 50});
 		
@@ -79,6 +88,7 @@ function onPlayerReady(event){
 		main_videoId = $(event.target).attr('videoId');
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
+		$('html, body').animate({ scrollTop: $('.iframe-div').offset().top - 100});
 	});
 	
 	$('.nav-div').on('click', '#play-button', event => {
@@ -88,15 +98,27 @@ function onPlayerReady(event){
   		player.pauseVideo();
   	}
 	});
+	
+	$('.nav-div').on('click', '#fullscreen', event => {
+		let elem = $('#video')[0];
+  	if(elem.webkitRequestFullscreen){
+  		elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+  	}
+  	if(document.webkitExitFullscreen){
+  		document.webkitExitFullscreen();
+  	}
+	});
 									/** M O U S E  T R A P **/
 			//Play & pause 
 			//key: w
 	Mousetrap.bind('w', function(){
   	if(player_state == 2){	//playing
   		player.playVideo();
+  		
   	} else if(player_state == 1){ //paused
   		player.pauseVideo();
   	}
+  	
 	});
 			//Fullscreen 
 			//key: f
@@ -174,7 +196,8 @@ function onPlayerReady(event){
 			//toggle search results
 			//key: t
 	Mousetrap.bind('t', function(){
-		$('.result-section').toggle('hide');
+		//$('.result-section').toggle('hide');
+		toggleHide();
 	});
 }
 /*
@@ -255,25 +278,26 @@ function getRelatedVideoList(videoId, callback){
 }
 
 
+
+
 																/** Event listener **/
 
 function watchSubmit(){
 	$('html, body').animate({ scrollTop: $('.result-section').offset().top});
-	
+		
   // Confirm that separate object work
   $('.search-form').submit(event=>{
     event.preventDefault();
     const queryTarget = $(event.currentTarget).find('.text-input');
     user_input = queryTarget.val();
-    //queryTarget.val("");
     getDataFromApi(renderer.displaySearchResult);
     $('.result-section').removeClass('hide');
-    $('.text-input').blur();
-  });
+  }); 
 }
 
 $('.toggle-result').on('click', event =>{
-	$('.result-section').toggle('hide');
+	//$('.result-section').toggle('hide');
+	toggleHide();
 });
 
 
@@ -305,7 +329,6 @@ $('.result-div').on('click', '.more-btn', event => {
 });
 $('.top-btn').on('click', function(){
 	$('html, body').animate({ scrollTop: 0});
-
 });
 
 		/** Related search **/
@@ -340,15 +363,15 @@ $(".result-div").on('keypress', 'img[id^="img"]', event => {
 
 $(watchSubmit);
 
-
+/*
 function resol(){
 	const hh = $(window).height();
 	const ww = $(window).width();
 	$('.res').text('height: '+hh+', width: '+ww);
 	return;
 }
-
 $(resol);
+*/
 
 								/**	Iframe Async API Load sequence	**/
 var tag = document.createElement('script');
