@@ -239,7 +239,7 @@ footer {
 	
 	*/
 	
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 768px){
 	/* GRID */
 	.col-6, .col-12 {
 		float: left;
@@ -309,15 +309,18 @@ footer {
 		margin-bottom: 30px;
 	}
 	*/
-	.next-btn,
+	.next-btn {
+		position: absolute;
+	}
+	
 	.prev-btn {
-		position: relative;
+		//position: relative;
 	}
 	.next-btn {
 		right:0;
 	}
 	.page-btn {
-		width: 50%;
+		width: 49%;
 	}
 	#video {
 		pointer-events: auto;
