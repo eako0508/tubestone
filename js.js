@@ -271,7 +271,7 @@ function getRelatedVideoList(videoId, callback){
 		type: 'video',
 		relatedToVideoId: videoId,
 		pageToken: sub_query_token,
-		maxResults: 5
+		maxResults: 9
 	}
 	$.getJSON(YOUTUBE_SEARCH_URL, query, callback);
 	return;

@@ -7,7 +7,7 @@
 					
 				2. change aspect ratio of iframe dynamically with 4:3 
 				
-				
+				low res shoudn't use 30% and 1.6666%. rectify it.
 				
 				Was working on responsive grid for iphone5
 				
@@ -26,10 +26,10 @@ body {
   display: none;
 }
 section {
-	
+	/*
   margin: 0 auto;
   margin-bottom: 1%;
-  
+  */
   /*
   margin-bottom: 50px;
   */
@@ -43,16 +43,22 @@ section {
 	/* Buttons */
 	
 .page-btn {
+	/*
 	width: 50%;
+	*/
 	height: 80px;
 	bottom: 0;
+	
+	
+	width: 49%;
 }
+/*
 .page-btn::before, .page-btn::after {
 	visibility: hidden;
 	display: table;
 	content: "";
 }
-
+*/
 .button-container {
 	clear: left;
 	height: 120px;
@@ -103,6 +109,10 @@ header {
 	position: relative;
 	left: 40px;
 }
+a, a:hover, a:active {
+	text-decoration: none;
+	color:inherit;
+}
 input[type=text] {
   width: 350px;
   padding: 2px 3px;
@@ -141,10 +151,20 @@ input[type=text] {
 }
 
 .search-result {
-	display: inline-block;
-	width: 300px;
-	height: 100px;
+	//display: inline-block;
+	//display: table-cell;
+	width: 30%;
+	height: 170px;
 	float: left;
+	//clear: right;
+	/*
+	margin-left: 1.66666%;
+	margin-right: 1.66666%;
+	*/
+	margin: 1.66666%;
+	padding-top: 10px;
+	max-width: 282px;
+	box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
 
 
@@ -169,12 +189,22 @@ iframe {
 .video-related {
 	background-color: tan;
 	margin-bottom: 10px;
-	height: auto;
 	overflow: auto;
 	padding-top: 10px;
+	//display: table-cell;
+	text-align: center;
 }
 .video-related .search-result:hover{
 	background-color: #c19962;
+}
+.video-related .search-result{
+	background-color: burlywood;
+}
+.result-section .search-result{
+	background-color: gainsboro;
+}
+.result-section .search-result:hover{
+	background-color: darkgray;
 }
 
 			/* F O O T E R   S E C T I O N */
@@ -205,30 +235,36 @@ footer {
 }
 
 			/* G R I D */
-			
+/*
 .section::before,
 .section::after {
   display: table;
   content: '';
 }
-
+*/
 .section::after {
   clear: both;
 }
 
 .col-6, .col-12 {
+	/*
 	float: left;
 	
 	padding-left: 1.04166666%;
 	padding-right: 1.04166666%;
 	
 	width: 100%;
+	*/
 }
 .result-img {
-	float: left;
+	//float: left;
+	display: block;
+	width: 75%;
+	margin: 0 auto;
 }
 .result-p {
-	
+	display: inline-block;
+	height: 32px;
 }
 
 
@@ -287,7 +323,7 @@ footer {
 		
 	}
 	.result-img{
-		float: left;
+		//float: left;
 	}
 	.header-toggle-result{
 		display: none;
@@ -309,15 +345,14 @@ footer {
 		margin-bottom: 30px;
 	}
 	*/
+	/*
 	.next-btn {
 		position: absolute;
+		right:0;
 	}
-	
+	*/
 	.prev-btn {
 		//position: relative;
-	}
-	.next-btn {
-		right:0;
 	}
 	.page-btn {
 		width: 49%;
@@ -345,6 +380,10 @@ div.ytp-ce-element ytp-ce-video ytp-ce-element-show ytp-ce-bottom-left-quad ytp-
 #video {
 	//pointer-events: none;
 }
+
+
+
+
 
 
 

@@ -75,7 +75,7 @@ var renderer = (function() {
 	function renderResult(result, index){
 		let temp_title;
 		if(result.snippet.title.length > 70){
-			temp_title = result.snippet.title.substring(0,70).trim() + '...';
+			temp_title = result.snippet.title.substring(0,65).trim() + '...';
 		} else {
 			temp_title = result.snippet.title;
 		}
@@ -84,7 +84,7 @@ var renderer = (function() {
 		//<p id='p-${result.id.videoId}'>${temp_title}</p>
 		return `
 			<div class='search-result'>
-			<img class='result-img' id='img-${index}' src='${result.snippet.thumbnails.default.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
+			<img class='result-img' id='img-${index}' src='${result.snippet.thumbnails.medium.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
 			<p id='p-${result.id.videoId}' class='result-p'>${temp_title}</p>
 			
 			</div>
@@ -94,7 +94,7 @@ var renderer = (function() {
 		//console.log(result.snippet.title.length);
 		return `
 			<div class='search-result'>
-			<img class='result-img' id='img-${index}' src='${result.snippet.thumbnails.default.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
+			<img class='result-img' id='img-${index}' src='${result.snippet.thumbnails.medium.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
 			<p id='p-${result.id.videoId}' class='result-p'>${result.snippet.title}</p>
 			</div>
 		`;
