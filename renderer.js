@@ -73,7 +73,14 @@ var renderer = (function() {
 
 	//displays each search results
 	function renderResult(result, index){
-		let temp_title = result.snippet.title.substring(0,50);
+		let temp_title;
+		if(result.snippet.title.length > 70){
+			temp_title = result.snippet.title.substring(0,70).trim() + '...';
+		} else {
+			temp_title = result.snippet.title;
+		}
+		
+		
 		//<p id='p-${result.id.videoId}'>${temp_title}</p>
 		return `
 			<div class='search-result'>

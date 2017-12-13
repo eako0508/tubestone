@@ -26,12 +26,17 @@ body {
   display: none;
 }
 section {
+	
   margin: 0 auto;
   margin-bottom: 1%;
+  
+  /*
+  margin-bottom: 50px;
+  */
 }
 .video-list{
 	font-weight: bold;
-	margin: 0;
+	margin-left: 50px;
 	font-size: x-large;
 }
 
@@ -69,8 +74,10 @@ section {
 }
 /* For related video button container */
 .rel-btn-container {
-	padding-top: 40px;
+	//padding-top: 40px;
+	padding-top: 5px;
 	height: 100px;
+	margin-bottom: 30px;
 }
 .btn:hover {
 	background-color: #b9b9b9;
@@ -100,18 +107,21 @@ input[type=text] {
   width: 350px;
   padding: 2px 3px;
 }
+.form-submit-btn{
+	background-color: lightgray;
+}
 .search-btn {
 
 }
 .header-toggle-result {
 	position: absolute;
-	top: 32px;
+	top: 50px;
 	right: 20px;
 }
 .inst {
 	position: absolute;
-	top: 32px;
-	right: 130px;
+	top: 50px;
+	right: 150px;
 }
 .instruction-list {
 	background-color: white;
@@ -191,6 +201,7 @@ footer {
 }
 .footer-toggle-btn {
 	left: 0;
+	border-right: 1px solid black;
 }
 
 			/* G R I D */
@@ -220,7 +231,15 @@ footer {
 	
 }
 
-@media only screen and (max-width: 640px){
+
+
+	/* 
+	
+				For Small screens/mobile/tablests 
+	
+	*/
+	
+@media only screen and (max-width: 800px){
 	/* GRID */
 	.col-6, .col-12 {
 		float: left;
@@ -285,9 +304,11 @@ footer {
 		height: auto;
 		margin-bottom: 50px;
 	}
+	/*
 	.rel-btn-container {
-		//margin-bottom: 30px;
+		margin-bottom: 30px;
 	}
+	*/
 	.next-btn,
 	.prev-btn {
 		position: relative;
@@ -301,18 +322,25 @@ footer {
 	#video {
 		pointer-events: auto;
 	}
+	#play-button,
+	#fullscreen {
+		display: none;
+	}
+	.btn {
+		background-color: lightgray;
+	}
 }
 
 
 
-
+/* For test */
 
 div.ytp-ce-element ytp-ce-video ytp-ce-element-show ytp-ce-bottom-left-quad ytp-ce-size-506 {
 	visibility: hidden;
 }
 
 #video {
-	pointer-events: none;
+	//pointer-events: none;
 }
 
 
