@@ -7,8 +7,6 @@
 					
 				2. change aspect ratio of iframe dynamically with 4:3 
 				
-				low res shoudn't use 30% and 1.6666%. rectify it.
-				
 				Was working on responsive grid for iphone5
 				
 			**/
@@ -151,16 +149,9 @@ input[type=text] {
 }
 
 .search-result {
-	//display: inline-block;
-	//display: table-cell;
 	width: 30%;
 	height: 170px;
 	float: left;
-	//clear: right;
-	/*
-	margin-left: 1.66666%;
-	margin-right: 1.66666%;
-	*/
 	margin: 1.66666%;
 	padding-top: 10px;
 	max-width: 282px;
@@ -188,7 +179,7 @@ iframe {
 }
 .video-related {
 	background-color: tan;
-	margin-bottom: 10px;
+	margin-bottom: 50px;
 	overflow: auto;
 	padding-top: 10px;
 	//display: table-cell;
@@ -274,8 +265,8 @@ footer {
 				For Small screens/mobile/tablests 
 	
 	*/
-	
-@media only screen and (max-width: 768px){
+
+@media only screen and (max-width: 767px){
 	/* GRID */
 	.col-6, .col-12 {
 		float: left;
@@ -283,6 +274,10 @@ footer {
 		padding-right: 0;
 		width: 100%;
 		height: 300px;
+
+	}
+	header .col-12 {
+		height: 400px;
 	}
 	/* End of grid */
 	
@@ -315,15 +310,21 @@ footer {
 	.inst {
 		display: none;
 	}
-	
+	.result-section {
+		margin-top: 6px;
+	}
 	.search-result {
 		width: 100%;
+		max-width: none;
+		//height: 200px;
+		height: auto;
+		margin: 1.66666% 0;
 	}
 	.result-p{
 		
 	}
 	.result-img{
-		//float: left;
+		
 	}
 	.header-toggle-result{
 		display: none;
@@ -332,25 +333,18 @@ footer {
 	
 	/* Video section */
 	iframe {
+		/*
 		width: 300px;
 		height: 225px;
+		*/
+		width: 290px;
+		height: 217.5px;
 	}
 	.video-related {
 		overflow: hidden;
 		height: auto;
 		margin-bottom: 50px;
 	}
-	/*
-	.rel-btn-container {
-		margin-bottom: 30px;
-	}
-	*/
-	/*
-	.next-btn {
-		position: absolute;
-		right:0;
-	}
-	*/
 	.prev-btn {
 		//position: relative;
 	}

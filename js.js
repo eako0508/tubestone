@@ -300,12 +300,23 @@ $('.toggle-result').on('click', event =>{
 	toggleHide();
 });
 
+$('.result-sections').on( 'mousewheel DOMMouseScroll', function (e) { 
+  
+  var e0 = e.originalEvent;
+  var delta = e0.wheelDelta || -e0.detail;
+
+  this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+  e.preventDefault();  
+  console.log('scroll triggered');
+});
 
 		/** Primary search **/
 $('.result-div').on('click', '.next-btn', event => {
   query_token = next_token;
   getDataFromApi(renderer.displaySearchResult);
   next_token = '';
+  //$('html, body').animate({ scrollTop: $('.result-section').offset().top});
+  
 });
 $('.result-div').on('click', '.prev-btn', event => {
   query_token = prev_token;
@@ -336,11 +347,13 @@ $('.video-related').on('click', '.next-btn', event => {
   sub_query_token = sub_next_token;
   getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
   sub_next_token = '';
+  $('html, body').animate({ scrollTop: $('.video-related').offset().top - 80});
 });
 $('.video-related').on('click', '.prev-btn', event => {
   sub_query_token = sub_prev_token;
   getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
   sub_prev_token = '';
+  $('html, body').animate({ scrollTop: $('.video-related').offset().top - 80});
 });
 
 
