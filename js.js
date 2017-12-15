@@ -209,6 +209,9 @@ playerVars: {
 */
 
 									/** GLOBAL VARIABLES **/
+									
+
+									
 let user_input = '';
 let next_token = '';
 let prev_token = '';
@@ -300,6 +303,11 @@ $('.toggle-result').on('click', event =>{
 	toggleHide();
 });
 
+
+
+
+
+/*
 $('.result-sections').on( 'mousewheel DOMMouseScroll', function (e) { 
   
   var e0 = e.originalEvent;
@@ -309,6 +317,14 @@ $('.result-sections').on( 'mousewheel DOMMouseScroll', function (e) {
   e.preventDefault();  
   console.log('scroll triggered');
 });
+*/
+
+
+
+
+
+
+
 
 		/** Primary search **/
 $('.result-div').on('click', '.next-btn', event => {
