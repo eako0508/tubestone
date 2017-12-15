@@ -122,9 +122,11 @@ input[type=text] {
 
 }
 .header-toggle-result {
+	/*
 	position: absolute;
 	top: 50px;
 	right: 20px;
+	*/
 }
 .inst {
 	position: absolute;
@@ -184,6 +186,7 @@ iframe {
 	padding-top: 10px;
 	//display: table-cell;
 	text-align: center;
+	background-color: white;
 }
 .video-related .search-result:hover{
 	background-color: #c19962;

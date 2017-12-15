@@ -61,10 +61,12 @@ function onStateChange(event){
 }
 
 function toggleHide(){
-	if($('.result-section').hasClass('hide')){
-  	$('.result-section').removeClass('hide');
+	if($('.result-div').hasClass('hide')){
+  	$('.result-div').removeClass('hide');
+  	$('.video-related').addClass('hide');
   } else {
-  	$('.result-section').addClass('hide');
+  	$('.result-div').addClass('hide');
+  	$('.video-related').removeClass('hide');
   }
 }
 
@@ -72,12 +74,15 @@ function onPlayerReady(event){
 	
 	$('.result-div').on('click', 'img', event => {
 		main_videoId = $(event.target).attr('videoId');
+		/* 
+					for adding title
 		let temp = $(`#p-${main_videoId}`).text();
 		$('#current_title').text(temp);
+		*/
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
 		//$('.result-section').toggle('hide');
-		toggleHide();
+		//toggleHide();
 		
     //$('html, body').animate({ scrollTop: $('.iframe-div').offset().top - 50});
 		
@@ -89,6 +94,7 @@ function onPlayerReady(event){
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
 		$('html, body').animate({ scrollTop: $('.iframe-div').offset().top - 100});
+		//toggleHide();
 	});
 	
 	$('.nav-div').on('click', '#play-button', event => {
@@ -197,7 +203,7 @@ function onPlayerReady(event){
 			//key: t
 	Mousetrap.bind('t', function(){
 		//$('.result-section').toggle('hide');
-		toggleHide();
+		//toggleHide();
 	});
 }
 /*
@@ -286,7 +292,7 @@ function getRelatedVideoList(videoId, callback){
 																/** Event listener **/
 
 function watchSubmit(){
-	$('html, body').animate({ scrollTop: $('.result-section').offset().top});
+	//$('html, body').animate({ scrollTop: $('.result-div').offset().top});
 		
   // Confirm that separate object work
   $('.search-form').submit(event=>{
@@ -294,7 +300,7 @@ function watchSubmit(){
     const queryTarget = $(event.currentTarget).find('.text-input');
     user_input = queryTarget.val();
     getDataFromApi(renderer.displaySearchResult);
-    $('.result-section').removeClass('hide');
+    $('.result-div').removeClass('hide');
   }); 
 }
 
