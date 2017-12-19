@@ -224,6 +224,10 @@ iframe {
 .result-div .search-result{
 	background-color: burlywood;
 }
+
+.result-p {
+	font-family: 'Barlow', sans-serif;
+}
 /*
 .result-div .search-result{
 	background-color: gainsboro;

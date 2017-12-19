@@ -71,12 +71,11 @@ function toggleHide(){
   	
   	//Displaying show-result-btn at this moment. 
   	//Need to hide show-result-btn and display show-related-btn
-  	$('.show-search-btn').removeClass('hide');
-  	$('.show-related-btn').addClass('hide');
-  	
+  	$('.show-search-btn').addClass('hide');
+  	$('.show-related-btn').removeClass('hide');
+  	//console.log('remove class hide for show-related-btn and add hide to show-result-btn');
   	
   } else {
-  	
   	
   	//when it's showing search results
   	//console.log('showing video-related and hiding result-div');
@@ -85,9 +84,8 @@ function toggleHide(){
   	
   	//Displaying show-result-btn at this moment. 
   	//Need to hide show-result-btn and display show-related-btn
-  	$('.show-search-btn').addClass('hide');
-  	$('.show-related-btn').removeClass('hide');
-  	//console.log('remove class hide for show-related-btn and add hide to show-result-btn');
+  	$('.show-search-btn').removeClass('hide');
+  	$('.show-related-btn').addClass('hide');
   	
   }
 }
