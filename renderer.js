@@ -74,8 +74,12 @@ var renderer = (function() {
 	//displays each search results
 	function renderResult(result, index){
 		let temp_title;
-		if(result.snippet.title.length > 70){
-			temp_title = result.snippet.title.substring(0,65).trim() + '...';
+		/*
+		console.log(result.snippet.title);
+		console.log(result.snippet.title.length);
+		*/
+		if(result.snippet.title.length > 50){
+			temp_title = result.snippet.title.substring(0,50).trim() + '...';
 		} else {
 			temp_title = result.snippet.title;
 		}
@@ -84,18 +88,25 @@ var renderer = (function() {
 		//<p id='p-${result.id.videoId}'>${temp_title}</p>
 		return `
 			<div class='search-result'>
-			<img class='result-img' id='img-${index}' src='${result.snippet.thumbnails.medium.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
-			<p id='p-${result.id.videoId}' class='result-p'>${temp_title}</p>
+			<img class='result-img' id='img-s-${index}-${result.id.videoId}' src='${result.snippet.thumbnails.medium.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}' title='${result.snippet.title}'>
+			<p id='ps-${result.id.videoId}' class='result-p'>${temp_title}</p>
 			
 			</div>
 		`;
 	}
 	function renderList(result, index){
 		//console.log(result.snippet.title.length);
+		let temp_title;
+		//console.log(result.snippet.title.length);
+		if(result.snippet.title.length > 50){
+			temp_title = result.snippet.title.substring(0,50).trim() + '...';
+		} else {
+			temp_title = result.snippet.title;
+		}
 		return `
 			<div class='search-result'>
-			<img class='result-img' id='img-${index}' src='${result.snippet.thumbnails.medium.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
-			<p id='p-${result.id.videoId}' class='result-p'>${result.snippet.title}</p>
+			<img class='result-img' id='img-r-${index}-${result.id.videoId}' src='${result.snippet.thumbnails.medium.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
+			<p id='pr-${result.id.videoId}' class='result-p'>${temp_title}</p>
 			</div>
 		`;
 	}

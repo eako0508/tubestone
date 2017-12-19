@@ -62,11 +62,33 @@ function onStateChange(event){
 
 function toggleHide(){
 	if($('.result-div').hasClass('hide')){
+		//result-div has hide, meaning related videos are displayed at this moment
+		//it must have 'show result video btn' on the page.
+		//this function will trigger to display result-div and show view related-btn
+		//console.log('hiding video-related and showing result-div');
   	$('.result-div').removeClass('hide');
   	$('.video-related').addClass('hide');
+  	
+  	//Displaying show-result-btn at this moment. 
+  	//Need to hide show-result-btn and display show-related-btn
+  	$('.show-search-btn').removeClass('hide');
+  	$('.show-related-btn').addClass('hide');
+  	
+  	
   } else {
+  	
+  	
+  	//when it's showing search results
+  	//console.log('showing video-related and hiding result-div');
   	$('.result-div').addClass('hide');
   	$('.video-related').removeClass('hide');
+  	
+  	//Displaying show-result-btn at this moment. 
+  	//Need to hide show-result-btn and display show-related-btn
+  	$('.show-search-btn').addClass('hide');
+  	$('.show-related-btn').removeClass('hide');
+  	//console.log('remove class hide for show-related-btn and add hide to show-result-btn');
+  	
   }
 }
 
@@ -74,11 +96,12 @@ function onPlayerReady(event){
 	
 	$('.result-div').on('click', 'img', event => {
 		main_videoId = $(event.target).attr('videoId');
-		/* 
-					for adding title
-		let temp = $(`#p-${main_videoId}`).text();
-		$('#current_title').text(temp);
-		*/
+		const vid_title = $(event.target).attr('title');
+		$('#current_title').text(vid_title);
+				//	for adding title
+		//let temp = $(`#ps-${main_videoId}`).text();
+		//$('#current_title').text(temp);
+		
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
 		//$('.result-section').toggle('hide');
@@ -159,20 +182,7 @@ function onPlayerReady(event){
 		player.seekTo(player.getCurrentTime()+10, true);
 	});
 	
-	
 	Mousetrap.bind('q', function(){
-		let curr_vol = player.getVolume();
-		console.log('lower volume')
-		console.log(curr_vol);
-		if(curr_vol < 5){
-			player.mute();
-		} else{
-			player.unMute();
-			player.setVolume(curr_vol-5);
-		}
-	});
-	
-	Mousetrap.bind('e', function(){
 		let curr_vol = player.getVolume();
 		console.log('increase volume')
 		console.log(curr_vol);
@@ -183,6 +193,19 @@ function onPlayerReady(event){
 			player.setVolume(curr_vol+5);
 		}
 	});
+	
+	Mousetrap.bind('a', function(){
+		let curr_vol = player.getVolume();
+		console.log('lower volume')
+		console.log(curr_vol);
+		if(curr_vol < 5){
+			player.mute();
+		} else{
+			player.unMute();
+			player.setVolume(curr_vol-5);
+		}
+	});
+		
 	Mousetrap.bind('z', function(){
 		console.log('lower volume');
 		console.log('is muted?: '+player.isMuted());
@@ -203,7 +226,7 @@ function onPlayerReady(event){
 			//key: t
 	Mousetrap.bind('t', function(){
 		//$('.result-section').toggle('hide');
-		//toggleHide();
+		toggleHide();
 	});
 }
 /*
