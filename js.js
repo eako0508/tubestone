@@ -104,7 +104,7 @@ function onPlayerReady(event){
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
 		//$('.result-section').toggle('hide');
 		//toggleHide();
-		
+		$('html, body').animate({ scrollTop: $('.iframe-div').offset().top - 100});
     //$('html, body').animate({ scrollTop: $('.iframe-div').offset().top - 50});
 		
 	});

@@ -92,7 +92,7 @@ section {
 	//margin-bottom: 30px;
 }
 .btn:hover {
-	background-color: #b9b9b9;
+	background-color: orange;
 }
 	/* End of Buttons */
 	
@@ -124,11 +124,12 @@ input[type=text] {
   padding: 2px 3px;
 }
 .form-submit-btn{
-	background-color: lightgray;
+	background-color: burlywood;
 }
 .search-btn {
 
 }
+
 .header-toggle-result {
 	/*
 	position: absolute;
@@ -140,15 +141,58 @@ input[type=text] {
 	position: absolute;
 	top: 50px;
 	right: 150px;
+	background-color: burlywood;
 }
 .instruction-list {
-	background-color: white;
-	width: 300px;
+	background-color: tan;
+	//width: 300px;
 	padding: 10px;
 }
-.instruction-list h2 {
+/*
+.instruction-list div
+*/
+.inst-title {
 	text-align: center;
+	margin-bottom: 0;
+	font-weight: bold;
+	font-size:35px;
+	font-family: fantasy;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
+
+.elem span {
+	padding-left: 9px;
+	padding-right: 9px;
+}
+.elem {
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.first-span {
+	font-weight:900;
+	color: darkred;
+}
+.second-span {
+	float:right;
+	font-weight:bold;
+}
+
+
+/*
+.instruction-list p {
+	font-family: fantasy;
+}
+.instruction-list p b{
+	font-size:20px;
+	font-weight: bold;
+	color: darkred;
+	float:left;
+}
+.instruction-list p span{
+	float: right;
+}
+*/
 			/* R E S U L T   S E C T I O N */
 .result-section {
 	background-color: #eeeeee;
@@ -200,6 +244,11 @@ iframe {
 	text-align: center;
 	clear: both;
 }
+
+.time-nav-btn {
+	background-color: burlywood;
+}
+
 .video-related {
 	background-color: tan;
 	margin-bottom: 50px;
@@ -240,7 +289,7 @@ iframe {
 .div-footer {
 	position: relative;
 	text-align: center;
-	background-color: darkgray;
+	background-color: darkgoldenrod;
 	width: 100%;
 	//height: 50px;
 }
@@ -263,6 +312,7 @@ footer {
 	//right: 0;
 	width: 150px;
 	margin: 10px;
+	background-color: antiquewhite;
 }
 .footer-toggle-btn {
 	left: 0;
@@ -302,7 +352,10 @@ footer {
 	display: inline-block;
 	height: 32px;
 }
-
+.btn {
+	font-weight: 550;
+	font-size: larger;
+}
 
 
 	/* 
@@ -433,6 +486,7 @@ div.ytp-ce-element ytp-ce-video ytp-ce-element-show ytp-ce-bottom-left-quad ytp-
 }
 .middle-btn {
 	//float: left;
+	background-color: antiquewhite;
 }
 
 
