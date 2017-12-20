@@ -21,7 +21,7 @@ body {
 	background-color: tan;
 }
 .hide	 {
-  display: none;
+  display: none!important;
 }
 section {
 	/*
@@ -92,7 +92,19 @@ section {
 }
 	/* End of Buttons */
 	
-	
+.iframez {
+	width: 75%;
+	display: inline-block;
+	position: relative;
+	border: 1px solid black;
+}
+
+.videoz {
+	width: 25%;
+	display: inline-block;
+	float: right;
+	border: 1px solid black;
+}
 
 			
 			/* S E A R C H   S E C T I O N */
@@ -135,8 +147,8 @@ input[type=text] {
 }
 .inst {
 	position: absolute;
-	top: 50px;
-	right: 150px;
+	top: 45px;
+	right: 40px;
 	background-color: burlywood;
 }
 .instruction-list {
@@ -218,18 +230,19 @@ input[type=text] {
 				/* V I D E O    S E C T I O N */
 .video-section {
 	margin-top: 100px;
-	max-width: 1300px;
+	//max-width: 1300px;
 	margin-left:auto;
 	margin-right:auto;
 }
 .iframe-div {
 	background-color: antiquewhite;
 	text-align: center;
+	position: fixed;
+	left: 1.66666%
 }
 iframe {
 	width: 500px;
 	height: 280px;
-	padding-top: 10px;
 }
 #current_title {
 	font-weight:bold;
@@ -351,6 +364,14 @@ footer {
 .btn {
 	font-weight: 550;
 	font-size: larger;
+	display: inline-block;
+	padding: 6px 12px;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	border: 1px solid transparent;
+	border-radius: 4px;
 }
 
 
@@ -359,13 +380,13 @@ footer {
 				For Small screens/mobile/tablests 
 	
 	*/
-
+/*
 @media only screen and (max-width: 970px){
 	.search-result{
 		margin: 0 0 1.66666% 0;
 	}
 }
-
+*/
 @media only screen and (max-width: 767px){
 	/* GRID */
 	.col-6, .col-12 {
@@ -476,9 +497,9 @@ div.ytp-ce-element ytp-ce-video ytp-ce-element-show ytp-ce-bottom-left-quad ytp-
 }
 
 .middle-div-container {
-	margin-left: 20px;
+	
 	text-align: center;
-	padding: 10px;
+	
 }
 .middle-btn {
 	//float: left;
