@@ -43,14 +43,10 @@ section {
 	/* Buttons */
 	
 .page-btn {
-	/*
-	width: 50%;
-	*/
 	height: 80px;
 	bottom: 0;
-	
-	
 	width: 49%;
+	background-color: antiquewhite;
 }
 /*
 .page-btn::before, .page-btn::after {
