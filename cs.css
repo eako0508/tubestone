@@ -118,6 +118,7 @@ header {
 	clear: both;
 	background-color: darkgoldenrod;
 	padding: 5px 20px;
+	z-index: 2;
 }
 .search-span{
 	font-size: xx-large;
@@ -278,13 +279,14 @@ iframe {
 	//display: table-cell;
 	text-align: center;
 	//background-color: white;
+	margin-top: 45px;
 }
 .result-div {
 	margin-bottom: 50px;
 	overflow:auto;
 	//padding-top: 10px;
 	text-align: center;
-		
+	margin-top: 45px;
 }
 .video-related .search-result:hover,
 .result-div .search-result:hover{
@@ -519,10 +521,14 @@ footer {
 	#current_title {
 		width: 100%;
 	}
+	.result-div {
+		margin-top: 0;
+	}
 	.video-related {
 		overflow: hidden;
 		height: auto;
 		margin-bottom: 50px;
+		margin-top: 0;
 	}
 	.prev-btn {
 		//position: relative;
@@ -538,7 +544,15 @@ footer {
 		display: none;
 	}
 	.btn {
-		background-color: lightgray;
+		//background-color: lightgray;
+	}
+	.middle-div-container{
+		position: unset;
+	}
+	.middle-btn {
+		position: unset!important;
+		right: unset!important;
+		margin-top: 5px;
 	}
 }
 
@@ -557,11 +571,14 @@ div.ytp-ce-element ytp-ce-video ytp-ce-element-show ytp-ce-bottom-left-quad ytp-
 .middle-div-container {
 	
 	text-align: center;
-	
+	position: relative;
 }
 .middle-btn {
 	//float: left;
 	background-color: antiquewhite;
+	position: absolute;
+	right: 25px;
+	
 }
 
 
