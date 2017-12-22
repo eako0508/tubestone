@@ -182,8 +182,10 @@ function onPlayerReady(event){
 	
 	Mousetrap.bind('q', function(){
 		let curr_vol = player.getVolume();
+		/*
 		console.log('increase volume')
 		console.log(curr_vol);
+		*/
 		player.unMute();
 		if(curr_vol > 95){
 			player.setVolume(100);
@@ -194,8 +196,10 @@ function onPlayerReady(event){
 	
 	Mousetrap.bind('a', function(){
 		let curr_vol = player.getVolume();
+		/*
 		console.log('lower volume')
 		console.log(curr_vol);
+		*/
 		if(curr_vol < 5){
 			player.mute();
 		} else{
@@ -205,8 +209,10 @@ function onPlayerReady(event){
 	});
 		
 	Mousetrap.bind('z', function(){
+		/*
 		console.log('lower volume');
 		console.log('is muted?: '+player.isMuted());
+		*/
 		if(player.isMuted()){
 			player.unMute();
 		} else{
@@ -266,7 +272,7 @@ function getDataFromApi(callback){
     type: 'video',
     q: user_input,
     pageToken: query_token,
-    maxResults: 9
+    maxResults: 10
   };
   $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
   pageToken = '';
@@ -301,7 +307,7 @@ function getRelatedVideoList(videoId, callback){
 		type: 'video',
 		relatedToVideoId: videoId,
 		pageToken: sub_query_token,
-		maxResults: 9
+		maxResults: 10
 	}
 	$.getJSON(YOUTUBE_SEARCH_URL, query, callback);
 	return;
