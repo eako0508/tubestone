@@ -96,16 +96,9 @@ function onPlayerReady(event){
 		main_videoId = $(event.target).attr('videoId');
 		const vid_title = $(event.target).attr('title');
 		$('#current_title').text(vid_title);
-				//	for adding title
-		//let temp = $(`#ps-${main_videoId}`).text();
-		//$('#current_title').text(temp);
-		
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
-		//$('.result-section').toggle('hide');
-		//toggleHide();
 		$('html, body').animate({ scrollTop: $('.iframe-div').offset().top - 100});
-    //$('html, body').animate({ scrollTop: $('.iframe-div').offset().top - 50});
 		
 	});
 		
@@ -115,7 +108,6 @@ function onPlayerReady(event){
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
 		$('html, body').animate({ scrollTop: $('.iframe-div').offset().top - 100});
-		//toggleHide();
 	});
 	
 	$('.nav-div').on('click', '#play-button', event => {
@@ -233,13 +225,7 @@ function onPlayerReady(event){
 		toggleHide();
 	});
 }
-/*
-playerVars: {
-	'enablejsapi': 1,
-	'iv_load_policy': 0,
-	'showinfo': 0
-}
-*/
+
 
 									/** GLOBAL VARIABLES **/
 									
@@ -340,23 +326,6 @@ $('.toggle-result').on('click', event =>{
 
 
 
-/*
-$('.result-sections').on( 'mousewheel DOMMouseScroll', function (e) { 
-  
-  var e0 = e.originalEvent;
-  var delta = e0.wheelDelta || -e0.detail;
-
-  this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-  e.preventDefault();  
-  console.log('scroll triggered');
-});
-*/
-
-
-
-
-
-
 
 
 		/** Primary search **/
@@ -364,12 +333,7 @@ $('.result-div').on('click', '.next-btn', event => {
   query_token = next_token;
   getDataFromApi(renderer.displaySearchResult);
   next_token = '';
-  //$('html, body').animate({ scrollTop: $('.result-div').offset().top - 95});
   $('html, body').animate({ scrollTop: $('.result-div').offset().top - 95 });
-  
-  console.log('scroll-95');
-  //$('html, body').animate({ scrollTop: $('.result-section').offset().top});
-  
 });
 $('.result-div').on('click', '.prev-btn', event => {
   query_token = prev_token;
@@ -412,14 +376,6 @@ $('.video-related').on('click', '.prev-btn', event => {
 
 
 
-
-/*
-$('.result-div').on('click', 'img', event => {
-  $(event.currentTarget).addClass('hide-it');
-  $(event.currentTarget).parent('div').find('iframe').removeClass('hide-it');
-});
-*/
-
 $(".result-div").on('keypress', 'img[id^="img"]', event => {
   //console.log(event);
   if(event.which === 13){
@@ -429,16 +385,6 @@ $(".result-div").on('keypress', 'img[id^="img"]', event => {
 });
 
 $(watchSubmit);
-
-/*
-function resol(){
-	const hh = $(window).height();
-	const ww = $(window).width();
-	$('.res').text('height: '+hh+', width: '+ww);
-	return;
-}
-$(resol);
-*/
 
 								/**	Iframe Async API Load sequence	**/
 var tag = document.createElement('script');
