@@ -81,21 +81,15 @@ section {
 	/* End of Buttons */
 	
 .iframez {
-	//width: 75%;
 	display: inline-block;
-	//position: relative;
 	position: fixed;
-	//border: 1px solid black;
 }
 
 .videoz {
 	width: 50%;
-	//max-width: 500px;
 	display: inline-block;
-	//float: right;
-	//border: 1px solid black;
 	position: relative;
-	left: 810px;
+	left: 840px;
 	z-index: 1;
 }
 

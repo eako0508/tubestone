@@ -377,7 +377,6 @@ $('.video-related').on('click', '.prev-btn', event => {
 
 
 $(".result-div").on('keypress', 'img[id^="img"]', event => {
-  //console.log(event);
   if(event.which === 13){
     $(event.currentTarget).addClass('hide-it');
     $(event.currentTarget).parent('div').find('iframe').removeClass('hide-it');  
