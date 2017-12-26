@@ -364,7 +364,10 @@ $('.result-div').on('click', '.next-btn', event => {
   query_token = next_token;
   getDataFromApi(renderer.displaySearchResult);
   next_token = '';
-  $('html, body').animate({ scrollTop: $('.result-div').offset().top - 80});
+  //$('html, body').animate({ scrollTop: $('.result-div').offset().top - 95});
+  $('html, body').animate({ scrollTop: $('.result-div').offset().top - 95 });
+  
+  console.log('scroll-95');
   //$('html, body').animate({ scrollTop: $('.result-section').offset().top});
   
 });
@@ -372,7 +375,7 @@ $('.result-div').on('click', '.prev-btn', event => {
   query_token = prev_token;
   getDataFromApi(renderer.displaySearchResult);
   prev_token = '';
-  $('html, body').animate({ scrollTop: $('.result-div').offset().top - 80});
+  $('html, body').animate({ scrollTop: $('.result-div').offset().top - 90});
 });
 $('.result-div').on('click', '.nextPlay-btn', event => {
   query_token = next_token;

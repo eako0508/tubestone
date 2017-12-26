@@ -18,7 +18,7 @@
 	box-sizing: border-box;
 }
 body {
-	background-color: tan;
+	background-color: #a2836e;
 }
 .hide	 {
   display: none!important;
@@ -88,7 +88,7 @@ section {
 	//margin-bottom: 30px;
 }
 .btn:hover {
-	background-color: orange;
+	background-color: #fff2df;
 }
 	/* End of Buttons */
 	
@@ -97,7 +97,7 @@ section {
 	display: inline-block;
 	//position: relative;
 	position: fixed;
-	border: 1px solid black;
+	//border: 1px solid black;
 }
 
 .videoz {
@@ -119,7 +119,7 @@ header {
 	left: 0;
 	width: 100%;
 	clear: both;
-	background-color: darkgoldenrod;
+	background-color: #674d3c;
 	padding: 5px 20px;
 	z-index: 2;
 }
@@ -129,9 +129,12 @@ header {
 	position: relative;
 	left: 40px;
 }
-a, a:hover, a:active {
+a, a:active {
 	text-decoration: none;
-	color:inherit;
+	color: #d9ad7c;f
+}
+a:hover {
+	color: #fff2df;
 }
 input[type=text] {
   width: 350px;
@@ -140,7 +143,7 @@ input[type=text] {
   font-size: 25px;
 }
 .form-submit-btn{
-	background-color: burlywood;
+	background-color: #d9ad7c;
 	position: relative;
 	bottom: 4px;
 	left: 5px;
@@ -251,7 +254,7 @@ input[type=text] {
 	margin-right:auto;
 }
 .iframe-div {
-	background-color: antiquewhite;
+	background-color: #674d3c;
 	text-align: center;
 	position: fixed;
 	left: 1.66666%
@@ -268,6 +271,8 @@ iframe {
 	font-weight:bold;
 	font-size: 20px;
 	max-width: 500px;
+	color: #fff2df;
+	font-family: 'Roboto', sans-serif;
 }
 .nav-div {
 	padding: 5px;
@@ -276,11 +281,11 @@ iframe {
 }
 
 .time-nav-btn {
-	background-color: burlywood;
+	background-color: #d9ad7c;
 }
 
 .video-related {
-	background-color: tan;
+	background-color: inherit;
 	margin-bottom: 50px;
 	overflow: auto;
 	//padding-top: 10px;
@@ -419,7 +424,7 @@ footer {
 */
 @media only screen and (max-width: 500px){
 	.video-section{
-		margin-top: 83px;
+		margin-top: 90Px;
 	}
 	.iframez {
 		display: unset;
@@ -472,7 +477,7 @@ footer {
 	
 	/* Header */
 	header {
-		height: 85px;
+		height: 90px;
 		padding: 0;
 	}
 	/* Form */
@@ -482,6 +487,7 @@ footer {
 		position: relative;
 		left: 10px;
 		font-size: 16px;
+		background-color: #fff2df;
 	}
 	.form-submit-btn {
 		position: relative;
@@ -589,7 +595,7 @@ div.ytp-ce-element ytp-ce-video ytp-ce-element-show ytp-ce-bottom-left-quad ytp-
 }
 .middle-btn {
 	//float: left;
-	background-color: antiquewhite;
+	background-color: #d9ad7c;
 	position: absolute;
 	//right: 25px;
 	left: 40px;
