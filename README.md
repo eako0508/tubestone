@@ -10,7 +10,11 @@
 ## Mobile View
 
 ![mobile](https://raw.githubusercontent.com/eako0508/tubestone/master/img/tubestone_mobile.png)
- 
+
+## Technical
+
+This site is using HTML/Javascript/jQuery/Ajax.
+
 ## Related Resources
 
 Mousetrap (https://craig.is/killing/mice)
