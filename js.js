@@ -65,7 +65,6 @@ function toggleHide(){
 		//result-div has hide, meaning related videos are displayed at this moment
 		//it must have 'show result video btn' on the page.
 		//this function will trigger to display result-div and show view related-btn
-		//console.log('hiding video-related and showing result-div');
   	$('.result-div').removeClass('hide');
   	$('.video-related').addClass('hide');
   	
@@ -73,12 +72,10 @@ function toggleHide(){
   	//Need to hide show-result-btn and display show-related-btn
   	$('.show-search-btn').addClass('hide');
   	$('.show-related-btn').removeClass('hide');
-  	//console.log('remove class hide for show-related-btn and add hide to show-result-btn');
   	
   } else {
   	
   	//when it's showing search results
-  	//console.log('showing video-related and hiding result-div');
   	$('.result-div').addClass('hide');
   	$('.video-related').removeClass('hide');
   	
@@ -174,10 +171,6 @@ function onPlayerReady(event){
 	
 	Mousetrap.bind('q', function(){
 		let curr_vol = player.getVolume();
-		/*
-		console.log('increase volume')
-		console.log(curr_vol);
-		*/
 		player.unMute();
 		if(curr_vol > 95){
 			player.setVolume(100);
@@ -188,10 +181,6 @@ function onPlayerReady(event){
 	
 	Mousetrap.bind('a', function(){
 		let curr_vol = player.getVolume();
-		/*
-		console.log('lower volume')
-		console.log(curr_vol);
-		*/
 		if(curr_vol < 5){
 			player.mute();
 		} else{
@@ -201,10 +190,6 @@ function onPlayerReady(event){
 	});
 		
 	Mousetrap.bind('z', function(){
-		/*
-		console.log('lower volume');
-		console.log('is muted?: '+player.isMuted());
-		*/
 		if(player.isMuted()){
 			player.unMute();
 		} else{
@@ -221,7 +206,6 @@ function onPlayerReady(event){
 			//toggle search results
 			//key: t
 	Mousetrap.bind('t', function(){
-		//$('.result-section').toggle('hide');
 		toggleHide();
 	});
 }
@@ -258,7 +242,7 @@ function getDataFromApi(callback){
     type: 'video',
     q: user_input,
     pageToken: query_token,
-    maxResults: 10
+    maxResults: 30
   };
   $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
   pageToken = '';
@@ -293,7 +277,7 @@ function getRelatedVideoList(videoId, callback){
 		type: 'video',
 		relatedToVideoId: videoId,
 		pageToken: sub_query_token,
-		maxResults: 10
+		maxResults: 30
 	}
 	$.getJSON(YOUTUBE_SEARCH_URL, query, callback);
 	return;
@@ -305,9 +289,7 @@ function getRelatedVideoList(videoId, callback){
 																/** Event listener **/
 
 function watchSubmit(){
-	//$('html, body').animate({ scrollTop: $('.result-div').offset().top});
-		
-  // Confirm that separate object work
+	// Confirm that separate object work
   $('.search-form').submit(event=>{
     event.preventDefault();
     const queryTarget = $(event.currentTarget).find('.text-input');
@@ -318,7 +300,6 @@ function watchSubmit(){
 }
 
 $('.toggle-result').on('click', event =>{
-	//$('.result-section').toggle('hide');
 	toggleHide();
 });
 

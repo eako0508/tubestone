@@ -217,6 +217,7 @@ iframe {
 	max-width: 500px;
 	color: #fff2df;
 	font-family: 'Roboto', sans-serif;
+	margin: auto;
 }
 .nav-div {
 	padding: 5px;
@@ -460,7 +461,10 @@ footer {
 	border: 1px transparent;
 }
 
-
+.inst-motto {
+	width: 450px;
+	margin: 0 10px 30px;
+}
 
 
 
