@@ -107,9 +107,9 @@ header {
 }
 .search-span{
 	font-size: xx-large;
-	font-family: 'Ranchers', cursive;
+	//font-family: 'Ranchers', cursive;
 	position: relative;
-	left: 40px;
+	//left: 40px;
 }
 a, a:active {
 	text-decoration: none;
@@ -126,10 +126,16 @@ input[type=text] {
 }
 .form-submit-btn{
 	background-color: #d9ad7c;
+	/*
 	position: relative;
 	bottom: 4px;
 	left: 5px;
+	*/
 }
+form > .btn {
+	vertical-align: top;
+}
+
 .search-btn {
 
 }
@@ -138,9 +144,11 @@ input[type=text] {
 	
 }
 .inst {
+	/*
 	position: absolute;
 	top: 45px;
 	right: 40px;
+	*/
 	background-color: burlywood;
 }
 .instruction-list {
@@ -368,17 +376,22 @@ footer {
 		padding: 0;
 	}
 	/* Form */
+	
 	input[type=text]{
+		background-color: #fff2df;
+		font-size: 16px;
 		width: 200px;
+		/*
 		position: relative;
 		left: 10px;
-		font-size: 16px;
-		background-color: #fff2df;
+		*/
 	}
 	.form-submit-btn {
 		position: relative;
+		/*
 		left: 15px;
 		top: -2px;
+		*/
 	}
 	/* Instruction */
 	.inst {
