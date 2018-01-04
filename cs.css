@@ -82,15 +82,16 @@ section {
 	
 .iframez {
 	display: inline-block;
-	//position: fixed;
-	width: 40%;
+	width: 50%;
+	position: fixed;
+	
 }
 
 .videoz {
-	width: 40%;
+	width: 50%;
 	display: inline-block;
-	//position: relative;
-	//left: 840px;
+	position: absolute;
+	right: 0;
 	z-index: 1;
 }
 
