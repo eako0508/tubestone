@@ -95,7 +95,7 @@ function onPlayerReady(event){
 		$('#current_title').text(vid_title);
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
-		$('html, body').animate({ scrollTop: $('.iframe-div').offset().top - 100});
+		$('html, body').animate({ scrollTop: $('.iframez').offset().top - 100});
 		
 	});
 		
@@ -104,7 +104,7 @@ function onPlayerReady(event){
 		main_videoId = $(event.target).attr('videoId');
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
-		$('html, body').animate({ scrollTop: $('.iframe-div').offset().top - 100});
+		$('html, body').animate({ scrollTop: $('.iframez').offset().top - 100});
 	});
 	
 	$('.nav-div').on('click', '#play-button', event => {

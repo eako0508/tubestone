@@ -82,14 +82,15 @@ section {
 	
 .iframez {
 	display: inline-block;
-	position: fixed;
+	//position: fixed;
+	width: 40%;
 }
 
 .videoz {
-	width: 50%;
+	width: 40%;
 	display: inline-block;
-	position: relative;
-	left: 840px;
+	//position: relative;
+	//left: 840px;
 	z-index: 1;
 }
 
@@ -108,8 +109,8 @@ header {
 .search-span{
 	font-size: xx-large;
 	font-family: 'Ranchers', cursive;
-	position: relative;
-	left: 40px;
+	//position: relative;
+	//left: 40px;
 }
 a, a:active {
 	text-decoration: none;
@@ -118,17 +119,22 @@ a, a:active {
 a:hover {
 	color: #fff2df;
 }
+
 input[type=text] {
+  /*
   width: 350px;
   padding: 2px 3px;
   height: 40px;
   font-size: 25px;
+  */
 }
 .form-submit-btn{
+	/*
 	background-color: #d9ad7c;
 	position: relative;
 	bottom: 4px;
 	left: 5px;
+	*/
 }
 .search-btn {
 
@@ -197,19 +203,32 @@ input[type=text] {
 
 				/* V I D E O    S E C T I O N */
 .video-section {
-	margin-top: 100px;
+	//margin-top: 100px;
 	margin-left:auto;
 	margin-right:auto;
 }
 .iframe-div {
+	/*
 	background-color: #674d3c;
 	text-align: center;
-	position: fixed;
-	left: 1.66666%
+	*/
+	//position: fixed;
+	//left: 1.66666%;
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
 }
 iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*
 	width: 800px;
 	height: 600px;
+	*/
 }
 #current_title {
 	font-weight:bold;
@@ -237,7 +256,7 @@ iframe {
 	margin-top: 45px;
 }
 .result-div {
-	margin-bottom: 50px;
+	//margin-bottom: 50px;
 	overflow:auto;
 	text-align: center;
 	margin-top: 45px;
@@ -300,6 +319,7 @@ footer {
 	display: inline-block;
 	height: 32px;
 }
+/*
 .btn {
 	font-weight: 550;
 	font-size: larger;
@@ -312,7 +332,7 @@ footer {
 	border: 1px solid transparent;
 	border-radius: 4px;
 }
-
+*/
 
 	/* 
 	
@@ -322,7 +342,7 @@ footer {
 
 @media only screen and (max-width: 500px){
 	.video-section{
-		margin-top: 90Px;
+		//margin-top: 90Px;
 	}
 	.iframez {
 		display: unset;
@@ -369,16 +389,20 @@ footer {
 	}
 	/* Form */
 	input[type=text]{
+		/*
 		width: 200px;
 		position: relative;
 		left: 10px;
 		font-size: 16px;
 		background-color: #fff2df;
+		*/
 	}
 	.form-submit-btn {
+		/*
 		position: relative;
 		left: 15px;
 		top: -2px;
+		*/
 	}
 	/* Instruction */
 	.inst {
