@@ -304,7 +304,7 @@ footer {
 	width: 150px;
 	margin: 10px;
 	background-color: antiquewhite;
-	//display: none!important;
+	display: none!important;
 }
 .footer-toggle-btn {
 	left: 0;
@@ -442,8 +442,11 @@ footer {
 	
 	/* Video section */
 	iframe {
+		/*
 		width: 300px;
 		height: 225px;
+		*/
+		height: auto!important;
 	}
 	#current_title {
 		width: 100%;
@@ -482,7 +485,7 @@ footer {
 		margin-top: 5px;
 	}
 	.top-btn {
-		//display: inline-block!important;
+		display: inline-block!important;
 	}
 }
 
