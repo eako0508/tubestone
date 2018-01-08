@@ -379,9 +379,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 
 $(window).resize(function(){
-	let vw = $('#video').width();
 	let vh = $('#video').height();
-	$('.dummy').width(vw);
 	$('.dummy').height(vh);
 });
 
