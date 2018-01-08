@@ -498,6 +498,7 @@ footer {
 	.page-btn {
 		width: 45%;
 		display:inline-grid;
+		height: 60px;
 	}
 	#video {
 		pointer-events: auto;
