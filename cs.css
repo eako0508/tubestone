@@ -98,7 +98,7 @@ section {
 			
 			/* S E A R C H   S E C T I O N */
 header {
-	position: fixed;
+	position: fixed!important;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -110,6 +110,7 @@ header {
 .search-span{
 	font-size: xx-large;
 	font-family: 'Ranchers', cursive;
+	display: block;
 	//position: relative;
 	//left: 40px;
 }
@@ -141,13 +142,24 @@ input[type=text] {
 
 }
 
+.search-form {
+	display: inline-block;
+}
+
 .header-toggle-result {
 	
 }
+.header-div {
+	float: right;
+}
 .inst {
+	/*
 	position: absolute;
 	top: 45px;
 	right: 40px;
+	*/
+	//vertical-align: bottom;
+	//float: right;
 	background-color: burlywood;
 }
 .instruction-list {
@@ -208,6 +220,7 @@ input[type=text] {
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:15px;
+	top: 96px;
 }
 .iframe-div {
 	/*
@@ -255,13 +268,13 @@ iframe {
 	margin-bottom: 50px;
 	overflow: auto;
 	text-align: center;
-	margin-top: 45px;
+	//margin-top: 45px;
 }
 .result-div {
 	//margin-bottom: 50px;
 	overflow:auto;
 	text-align: center;
-	margin-top: 10px;
+	//margin-top: 10px;
 }
 .video-related .search-result:hover,
 .result-div .search-result:hover{

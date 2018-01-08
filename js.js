@@ -95,7 +95,7 @@ function onPlayerReady(event){
 		$('#current_title').text(vid_title);
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
-		$('html, body').animate({ scrollTop: $('.iframez').offset().top - 100});
+		$('html, body').animate({ scrollTop: 0});
 		
 	});
 		
@@ -104,7 +104,7 @@ function onPlayerReady(event){
 		main_videoId = $(event.target).attr('videoId');
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
-		$('html, body').animate({ scrollTop: $('.iframez').offset().top - 100});
+		$('html, body').animate({ scrollTop: 0});
 	});
 	
 	$('.nav-div').on('click', '#play-button', event => {
@@ -206,7 +206,7 @@ function onPlayerReady(event){
 			//toggle search results
 			//key: t
 	Mousetrap.bind('t', function(){
-		toggleHide();
+		//toggleHide();
 	});
 }
 
@@ -300,7 +300,7 @@ function watchSubmit(){
 }
 
 $('.toggle-result').on('click', event =>{
-	toggleHide();
+	//toggleHide();
 });
 
 
@@ -314,13 +314,13 @@ $('.result-div').on('click', '.next-btn', event => {
   query_token = next_token;
   getDataFromApi(renderer.displaySearchResult);
   next_token = '';
-  $('html, body').animate({ scrollTop: $('.result-div').offset().top - 95 });
+  $('html, body').animate({ scrollTop: 0});
 });
 $('.result-div').on('click', '.prev-btn', event => {
   query_token = prev_token;
   getDataFromApi(renderer.displaySearchResult);
   prev_token = '';
-  $('html, body').animate({ scrollTop: $('.result-div').offset().top - 90});
+  $('html, body').animate({ scrollTop: 0});
 });
 $('.result-div').on('click', '.nextPlay-btn', event => {
   query_token = next_token;
@@ -346,16 +346,14 @@ $('.video-related').on('click', '.next-btn', event => {
   sub_query_token = sub_next_token;
   getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
   sub_next_token = '';
-  $('html, body').animate({ scrollTop: $('.video-related').offset().top - 80});
+  $('html, body').animate({ scrollTop: 0});
 });
 $('.video-related').on('click', '.prev-btn', event => {
   sub_query_token = sub_prev_token;
   getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
   sub_prev_token = '';
-  $('html, body').animate({ scrollTop: $('.video-related').offset().top - 80});
+  $('html, body').animate({ scrollTop: 0});
 });
-
-
 
 $(".result-div").on('keypress', 'img[id^="img"]', event => {
   if(event.which === 13){

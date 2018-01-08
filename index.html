@@ -26,9 +26,11 @@
 			</div>
 			
 		</form>
-		<input class='btn search-btn bold-btn inst' type='button' value='Keyboard Shortcuts' href='.instruction-list' data-lity>
-		
-		
+		<div class='header-div col-6'>
+			<input class='btn middle-btn toggle-result show-related-btn bold-btn' type='button' value='Show related videos'>
+			<input class='btn middle-btn toggle-result show-search-btn bold-btn' type='button' value='Show Search results'>
+			<input class='btn search-btn bold-btn inst' type='button' value='Keyboard Shortcuts' href='.instruction-list' data-lity>
+		</div>
 	</header>
 	
 	<section class='video-section col-12' role='main'>
@@ -38,16 +40,19 @@
 			</div>
 			<p id='current_title'></p>
 			<div class='nav-div'>
-				<input type='button' id='play-button' class='btn bold-btn time-nav-btn' value='Play/Pause'>
-				<input type='button' id='fullscreen' class='btn bold-btn time-nav-btn' value='Full Screen'>
-			</div>			
+				<!--
+				<div class='row'>
+				</div>
+				-->
+					<input type='button' id='play-button' class='btn bold-btn time-nav-btn' value='Play/Pause'>
+					<input type='button' id='fullscreen' class='btn bold-btn time-nav-btn' value='Full Screen'>
+					
+				
+				
+			</div>
+			
 		</div>
 		<div class='videoz'>
-		
-			<div class='middle-div-container'>
-				<input class='btn middle-btn toggle-result show-related-btn bold-btn' type='button' value='Show related videos'>
-				<input class='btn middle-btn toggle-result show-search-btn bold-btn hide' type='button' value='Show Search results'>
-			</div>
 			<div class='video-related video-container hide'></div>
 			
 			<div class='result-head'></div>
