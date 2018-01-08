@@ -361,7 +361,14 @@ $(".result-div").on('keypress', 'img[id^="img"]', event => {
     $(event.currentTarget).parent('div').find('iframe').removeClass('hide-it');  
   }
 });
-
+$('.toggle-btn').on('click', event => {
+	toggleHide();
+});
+$('.bottom-btn').on('click', event => {
+	let dh = $(document).height();
+	$('html, body').animate({ scrollTop: dh});
+	console.log('bottom toggled');
+})
 $(watchSubmit);
 
 								/**	Iframe Async API Load sequence	**/
@@ -371,7 +378,12 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 
-
+$(window).resize(function(){
+	let vw = $('#video').width();
+	let vh = $('#video').height();
+	$('.dummy').width(vw);
+	$('.dummy').height(vh);
+});
 
 
 
