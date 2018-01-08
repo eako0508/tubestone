@@ -13,13 +13,31 @@ var renderer = (function() {
 	  `);
 	  
 	  //Display next & prev button
+	  /*
 	  if(typeof data.prevPageToken !== 'undefined'){
 	    $('.s-btn-container ').append(addPrev);
 	    prev_token = data.prevPageToken;
+	  } else if(typeof data.prevPageToken === 'undefined'){
+	  	$('.rel-btn-container').append(addPrev);
+	  	$('.prev-btn').addClass('invisibility');
+	  	console.log('triggered!');
 	  }
 	  if(typeof data.nextPageToken !== 'undefined'){
 	    $('.s-btn-container').append(addNext);
 	    next_token = data.nextPageToken;
+	  }
+	  */
+	  $('.s-btn-container ').append(addPrev);
+	  $('.s-btn-container').append(addNext);
+	  if(typeof data.prevPageToken !== 'undefined'){
+	  	prev_token = data.prevPageToken;
+	  } else {
+	  	$('.prev-btn').addClass('invisibility');
+	  }
+	  if(typeof data.nextPageToken !== 'undefined'){
+	  	next_token = data.nextPageToken;
+	  } else {
+	  	$('.next-btn').addClass('invisibility');
 	  }
 	}
 
@@ -30,14 +48,31 @@ var renderer = (function() {
 	  $('.video-related').append(`
 	  	<div class='button-container rel-btn-container'></div>
 	  `);
+	  /*
 	  if(typeof data.prevPageToken !== 'undefined'){
 	    $('.rel-btn-container').append(addPrev);
 	    sub_prev_token = data.prevPageToken;
+	  } else if(typeof data.prevPageToken === 'undefined'){
+	  	$('.rel-btn-container').append(addPrev).addClass('invisibility');
 	  }
 	  if(typeof data.nextPageToken !== 'undefined'){
 	    $('.rel-btn-container').append(addNext);
 	    sub_next_token = data.nextPageToken;
 	  }
+	  */
+	  $('.rel-btn-container ').append(addPrev);
+	  $('.rel-btn-container').append(addNext);
+	  if(typeof data.prevPageToken !== 'undefined'){
+	  	sub_prev_token = data.prevPageToken;
+	  } else {
+	  	$('.prev-btn').addClass('invisibility');
+	  }
+	  if(typeof data.nextPageToken !== 'undefined'){
+	  	sub_next_token = data.nextPageToken;
+	  } else {
+	  	$('.next-btn').addClass('invisibility');
+	  }
+	  
 		return;
 	}
 
