@@ -206,7 +206,7 @@ function onPlayerReady(event){
 			//toggle search results
 			//key: t
 	Mousetrap.bind('t', function(){
-		//toggleHide();
+		toggleHide();
 	});
 }
 
@@ -300,7 +300,7 @@ function watchSubmit(){
 }
 
 $('.toggle-result').on('click', event =>{
-	//toggleHide();
+	toggleHide();
 });
 
 

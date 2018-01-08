@@ -150,7 +150,15 @@ input[type=text] {
 	
 }
 .header-div {
-	float: right;
+	//float: right;
+	display: inline-block;
+	position: absolute;
+	width: 50%;
+	right: 0;
+}
+.header-div input {
+	display: inline-grid;
+	width: 45%;
 }
 .inst {
 	/*
@@ -267,13 +275,13 @@ iframe {
 	background-color: inherit;
 	margin-bottom: 50px;
 	overflow: auto;
-	text-align: center;
+	//text-align: center;
 	//margin-top: 45px;
 }
 .result-div {
 	//margin-bottom: 50px;
 	overflow:auto;
-	text-align: center;
+	//text-align: center;
 	//margin-top: 10px;
 }
 .video-related .search-result:hover,
@@ -430,7 +438,12 @@ footer {
 		*/
 	}
 	/* Instruction */
+	/*
 	.inst {
+		display: none!important;
+	}
+	*/
+	.header-div {
 		display: none!important;
 	}
 	.result-section {
