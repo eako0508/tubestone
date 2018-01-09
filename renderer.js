@@ -13,20 +13,7 @@ var renderer = (function() {
 	  `);
 	  
 	  //Display next & prev button
-	  /*
-	  if(typeof data.prevPageToken !== 'undefined'){
-	    $('.s-btn-container ').append(addPrev);
-	    prev_token = data.prevPageToken;
-	  } else if(typeof data.prevPageToken === 'undefined'){
-	  	$('.rel-btn-container').append(addPrev);
-	  	$('.prev-btn').addClass('invisibility');
-	  	console.log('triggered!');
-	  }
-	  if(typeof data.nextPageToken !== 'undefined'){
-	    $('.s-btn-container').append(addNext);
-	    next_token = data.nextPageToken;
-	  }
-	  */
+	  
 	  $('.s-btn-container ').append(addPrev);
 	  $('.s-btn-container').append(addNext);
 	  if(typeof data.prevPageToken !== 'undefined'){
@@ -48,18 +35,7 @@ var renderer = (function() {
 	  $('.video-related').append(`
 	  	<div class='button-container rel-btn-container'></div>
 	  `);
-	  /*
-	  if(typeof data.prevPageToken !== 'undefined'){
-	    $('.rel-btn-container').append(addPrev);
-	    sub_prev_token = data.prevPageToken;
-	  } else if(typeof data.prevPageToken === 'undefined'){
-	  	$('.rel-btn-container').append(addPrev).addClass('invisibility');
-	  }
-	  if(typeof data.nextPageToken !== 'undefined'){
-	    $('.rel-btn-container').append(addNext);
-	    sub_next_token = data.nextPageToken;
-	  }
-	  */
+	  
 	  $('.rel-btn-container ').append(addPrev);
 	  $('.rel-btn-container').append(addNext);
 	  if(typeof data.prevPageToken !== 'undefined'){
@@ -85,7 +61,7 @@ var renderer = (function() {
 			temp_title = result.snippet.title;
 		}
 		return `
-			<div class='search-result'>
+			<div class='search-result search-result-result'>
 			<img class='result-img' id='img-s-${index}-${result.id.videoId}' src='${result.snippet.thumbnails.medium.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}' title='${result.snippet.title}'>
 			<p id='ps-${result.id.videoId}' class='result-p'>${temp_title}</p>
 			
@@ -100,7 +76,7 @@ var renderer = (function() {
 			temp_title = result.snippet.title;
 		}
 		return `
-			<div class='search-result'>
+			<div class='search-result search-result-related'>
 			<img class='result-img' id='img-r-${index}-${result.id.videoId}' src='${result.snippet.thumbnails.medium.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
 			<p id='pr-${result.id.videoId}' class='result-p'>${temp_title}</p>
 			</div>
