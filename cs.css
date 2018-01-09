@@ -19,12 +19,12 @@
 }
 body {
 	background-color: #a2836e;
-	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx38BcjSisnNAlF3ate4P5j3cYUO3qR2PE9hk46M1IcuKZm8jrtg');
-	/*
+	background-image: url('http://all4desktop.com/data_images/original/4238036-background.jpg');
+	
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
-	*/
+	
 }
 .hide	 {
   display: none!important;
@@ -113,8 +113,12 @@ header {
 	left: 0;
 	width: 100%;
 	clear: both;
-	background-color: #7e4a35;
-	padding: 5px 20px;
+	//background-color: #7e4a35;
+	background-image: url('http://all4desktop.com/data_images/original/4238036-background.jpg');
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	padding: 5px 20px 15px 20px;
 	z-index: 2;
 }
 .search-span{
@@ -245,7 +249,7 @@ input[type=text] {
 	//margin-top: 100px;
 	margin-left:auto;
 	margin-right:auto;
-	margin-top:15px;
+	margin-top:10px;
 	top: 96px;
 }
 .iframe-div {
