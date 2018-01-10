@@ -56,16 +56,16 @@ function onPlayerReady(event){
 		$('#current_title').text(vid_title);
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
-		$('html, body').animate({ scrollTop: 0});
+		//$('html, body').animate({ scrollTop: 0});
 		
 	});
-		
+	
 	$('.video-related').on('click', 'img', event => {
 		//open video on video-section iframe-div
 		main_videoId = $(event.target).attr('videoId');
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
-		$('html, body').animate({ scrollTop: 0});
+		//$('html, body').animate({ scrollTop: 0});
 	});
 	
 	$('.nav-div').on('click', '#play-button', event => {
@@ -249,6 +249,7 @@ function getRelatedVideoList(videoId, callback){
 function watchSubmit(){
 	// Confirm that separate object work
   $('.search-form').submit(event=>{
+  	document.activeElement.blur();
     event.preventDefault();
     const queryTarget = $(event.currentTarget).find('.text-input');
     user_input = queryTarget.val();
