@@ -483,3 +483,12 @@ iframe {
 	content: '.';
 	background-color:white;
 }
+
+.time-nav-btn {
+	background-color: #d9ad7c;
+	color: black;
+}
+.form-submit-btn {
+	background-color: #d9ad7c;
+	color: black;
+}
