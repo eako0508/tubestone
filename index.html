@@ -29,7 +29,7 @@
 		</form>
 		<div class='header-div'>
 			<input class='btn middle-btn toggle-result show-related-btn ' type='button' value='Show related videos'>
-			<input class='btn middle-btn toggle-result show-search-btn hide btn-info' type='button' value='Show Search results'>
+			<input class='btn middle-btn toggle-result show-search-btn hide' type='button' value='Show Search results'>
 			<input class='btn search-btn inst btn-success' type='button' value='Keyboard Shortcuts' href='.instruction-list' data-lity>
 		</div>
 	</header>
@@ -41,6 +41,7 @@
 				<div class='dummy'></div>
 			</div>
 			<p id='current_title'></p>
+			
 			<div class='nav-div'>
 					<input type='button' id='play-button' class='btn time-nav-btn ' value='Play/Pause'>
 					<input type='button' id='fullscreen' class='btn time-nav-btn ' value='Full Screen'>
@@ -54,18 +55,13 @@
 			<div class='result-div video-container' aria-live="assertive">	
 			</div>
 			<div class='div-footer'>
-				<input class='btn top-btn btn-primary col-3' type='button' value='Top'>
-				<input class='btn toggle-btn btn-primary col-3' type='button' value='Toggle'/>
-				<input class='btn bottom-btn btn-primary col-3' type='button' value='Bottom'/>
+				<input class='btn top-btn col-3 btn-warning' type='button' value='Top'>
+				<input class='btn toggle-btn col-3 btn-danger' type='button' value='Toggle'/>
+				<input class='btn bottom-btn col-3 btn-warning' type='button' value='Bottom'/>
 			</div>
-		</div>
-		
+		</div>		
 	</section>
 	
-	<footer>
-		
-	</footer>
-
 	<div class='lity-hide instruction-list'>
 		<div class='inst-title'>Instruction</div>
 		

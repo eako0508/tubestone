@@ -252,18 +252,29 @@ iframe {
 
 .video-related {
 	background-color: inherit;
-	margin-bottom: 50px;
+	//margin-bottom: 50px;
 	overflow: auto;
 }
 .result-div {
 	overflow:auto;
 }
-.video-related .search-result:hover {
-	background-color: #1bb9cf;
-}
-.video-related .search-result {
-	background-color: #17a2b8;
+.show-search-btn {
+	background-color: #ce8046;
 	color: white;
+}
+.show-search-btn:hover {
+	background-color: #bb6831;
+	color: white;
+}
+
+
+
+.video-related .search-result {
+	background-color: #ce8046;
+	color: white;
+}
+.video-related .search-result:hover {
+	background-color: #bb6831;
 }
 
 .result-div .search-result:hover{
@@ -294,8 +305,13 @@ iframe {
 	
 }
 .top-btn {
-	background-color: antiquewhite;
+	
 }
+.div-footer-btn{
+	//background-color: antiquewhite;
+	background-color: white;
+}
+
 .footer-toggle-btn {
 	left: 0;
 	border-right: 1px solid black;
@@ -322,7 +338,7 @@ iframe {
 	
 	*/
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 600px){
 	.video-section{
 		//margin-top: 90Px;
 	}
@@ -389,18 +405,23 @@ iframe {
 		height: auto;
 		//margin: 1.66666% 0;
 		margin-bottom: 0;
+		padding: 10px;
 	}
 	.result-p{
 		
 	}
 	.result-img{
-		
+		width: 100%;
 	}
 	.header-toggle-result{
 		display: none;
 	}
-	
-	
+	/*
+	.some_div {
+		filter: blur(1px);
+	}
+	d89869
+	*/
 	/* Video section */
 	iframe {
 		height: auto!important;
@@ -414,7 +435,7 @@ iframe {
 	.video-related {
 		overflow: hidden;
 		height: auto;
-		margin-bottom: 50px;
+		//margin-bottom: 50px;
 		margin-top: 0;
 	}
 	.prev-btn {
@@ -456,8 +477,11 @@ iframe {
 	position: relative;
 }
 .middle-btn {
+	//background-color: #d9ad7c;
+	//border: 1px transparent;
+}
+.show-related-btn {
 	background-color: #d9ad7c;
-	border: 1px transparent;
 }
 
 .inst-motto {

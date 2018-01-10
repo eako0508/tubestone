@@ -287,7 +287,14 @@ function getRelatedVideoList(videoId, callback){
 
 
 																/** Event listener **/
-
+/*
+function setVidHeight(){
+	let vw = $(window).width();
+	let bh = vw * 3 / 4;
+	$('#video').attr('style','height:'+bh+'px!important');
+	console.log(bh);
+};
+*/
 function watchSubmit(){
 	// Confirm that separate object work
   $('.search-form').submit(event=>{
@@ -297,6 +304,7 @@ function watchSubmit(){
     getDataFromApi(renderer.displaySearchResult);
     $('.result-div').removeClass('hide');
   }); 
+  //setVidHeight();
 }
 
 $('.toggle-result').on('click', event =>{
@@ -382,8 +390,15 @@ $(window).resize(function(){
 	let vh = $('#video').height();
 	$('.dummy').height(vh);
 });
-
-
+/*
+$(window).resize(function(){
+	let vw = $(window).width();
+	let bh = vw * 3 / 4;
+	//$('#video').height(bh);
+	$('#video').attr('style','height:'+bh+'px!important');
+	console.log(bh);
+});
+*/
 
 
 
