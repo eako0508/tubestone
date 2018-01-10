@@ -38,11 +38,7 @@ section {
 
 .button-container {
 	clear: left;
-	//height: 120px;
 	position: relative;
-	
-	
-	//margin-top: 30px;
 	margin-bottom: 30px;
 	padding-top: 5px;
 	height: 100px;
@@ -63,14 +59,11 @@ section {
 }
 /* For search result button container */
 .s-btn-container {
-	//height: 90px;
+	
 }
 /* For related video button container */
 .rel-btn-container {
-	//padding-top: 40px;
-	//padding-top: 5px;
-	//height: 100px;
-	//margin-bottom: 30px;
+	
 }
 .btn:hover {
 	background-color: #fff2df;
@@ -100,7 +93,6 @@ header {
 	left: 0;
 	width: 100%;
 	clear: both;
-	//background-color: #7e4a35;
 	background-image: url('http://all4desktop.com/data_images/original/4238036-background.jpg');
 	background-position: center;
 	background-attachment: fixed;
@@ -252,7 +244,6 @@ iframe {
 
 .video-related {
 	background-color: inherit;
-	//margin-bottom: 50px;
 	overflow: auto;
 }
 .result-div {
@@ -308,7 +299,6 @@ iframe {
 	
 }
 .div-footer-btn{
-	//background-color: antiquewhite;
 	background-color: white;
 }
 
@@ -340,7 +330,7 @@ iframe {
 
 @media only screen and (max-width: 600px){
 	.video-section{
-		//margin-top: 90Px;
+		
 	}
 	.iframez {
 		display: unset;
@@ -403,7 +393,6 @@ iframe {
 		width: 100%;
 		max-width: none;
 		height: auto;
-		//margin: 1.66666% 0;
 		margin-bottom: 0;
 		padding: 10px;
 	}
@@ -416,13 +405,6 @@ iframe {
 	.header-toggle-result{
 		display: none;
 	}
-	/*
-	.some_div {
-		filter: blur(1px);
-	}
-	d89869
-	*/
-	/* Video section */
 	iframe {
 		height: auto!important;
 	}
@@ -435,7 +417,6 @@ iframe {
 	.video-related {
 		overflow: hidden;
 		height: auto;
-		//margin-bottom: 50px;
 		margin-top: 0;
 	}
 	.prev-btn {
@@ -477,8 +458,7 @@ iframe {
 	position: relative;
 }
 .middle-btn {
-	//background-color: #d9ad7c;
-	//border: 1px transparent;
+	
 }
 .show-related-btn {
 	background-color: #d9ad7c;

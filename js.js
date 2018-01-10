@@ -1,42 +1,3 @@
-/**
- 		** Objectives **
- * add feature to remove obstructinos, such as controls or annotation, from video (done)
- * add buttons for play, pause, next (in progress)
- 		- play/pause key added
- * add keyboard shortcuts for easier access (in progress)
- 		- w: play/pause video
- 		- q: 5 seconds before
- 		- e: 5 seconds ahead
- 		- f: full screen 
- * add percentage skip with 1234 on keyboard (done)
- 		- 1 2 3 4 5 keys that skips 1/6
- * disable youtube iframe for keyboard shortcut 
- 		because above keys doens't work after clicking youtube video.
- * show/hide
-  
- * Reduce title string for each block (70 words or less)
- 
- * add shortcuts to search result and/or related video (maybe key combination)
- 
- * add user customizable shortcut??
- 
- 
- 		** Related Resources **
- 		
- * mousetrap
- https://craig.is/killing/mice
- 
- * add keyboard shortcut
- https://www.hongkiat.com/blog/keyboard-shortcuts-website/
- 
- * add play/pause for youtube api
- https://css-tricks.com/play-button-youtube-and-vimeo-api/
- 
- * thumbnail for youtube
- https://developers.google.com/youtube/v3/docs/thumbnails
-  
-*/
-
 
 									/** I F R A M E  P L A Y E R **/
 
@@ -211,7 +172,7 @@ function onPlayerReady(event){
 }
 
 
-									/** GLOBAL VARIABLES **/
+									/** GLOBAL VARIABLES FOR API**/
 									
 
 									
@@ -230,9 +191,6 @@ let apikey = 'AIzaSyCT2DvM71hl86EH50zbLazdwD5PPsbYZzo';
 const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 const YOUTUBE_CHANNELS_URL = 'https://www.googleapis.com/youtube/v3/channels';
 const YOUTUBE_PLAYLISTS_URL = 'https://www.googleapis.com/youtube/v3/playlistItems';
-
-//const YOUTUBE_VIDEOS_URL = 'https://www.googleapis.com/youtube/v3/videos';
-//const YOUTUBE_URL = 'https://www.googleapis.com/youtube/v3';
 
 				/** Query builder **/
 function getDataFromApi(callback){
@@ -287,14 +245,7 @@ function getRelatedVideoList(videoId, callback){
 
 
 																/** Event listener **/
-/*
-function setVidHeight(){
-	let vw = $(window).width();
-	let bh = vw * 3 / 4;
-	$('#video').attr('style','height:'+bh+'px!important');
-	console.log(bh);
-};
-*/
+
 function watchSubmit(){
 	// Confirm that separate object work
   $('.search-form').submit(event=>{
@@ -304,7 +255,6 @@ function watchSubmit(){
     getDataFromApi(renderer.displaySearchResult);
     $('.result-div').removeClass('hide');
   }); 
-  //setVidHeight();
 }
 
 $('.toggle-result').on('click', event =>{
@@ -390,18 +340,3 @@ $(window).resize(function(){
 	let vh = $('#video').height();
 	$('.dummy').height(vh);
 });
-/*
-$(window).resize(function(){
-	let vw = $(window).width();
-	let bh = vw * 3 / 4;
-	//$('#video').height(bh);
-	$('#video').attr('style','height:'+bh+'px!important');
-	console.log(bh);
-});
-*/
-
-
-
-
-
-
