@@ -5,11 +5,11 @@
 
 ## Desktop View
 
-![desktop](https://raw.githubusercontent.com/eako0508/tubestone/master/img/tubestone_desktop.png)
+![desktop](https://raw.githubusercontent.com/eako0508/tubestone/master/img/new_tubestone_desktop.png)
 
 ## Mobile View
 
-![mobile](https://raw.githubusercontent.com/eako0508/tubestone/master/img/tubestone_mobile.png)
+![mobile](https://raw.githubusercontent.com/eako0508/tubestone/master/img/new_tubestone_mobile.png)
 
 ## Technical
 
