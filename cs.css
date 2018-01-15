@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 body {
-	background-color: #a2836e;
+	//background-color: #a2836e;
 	background-image: url('img/4238036-background.jpg');
 	
 	background-repeat: no-repeat;
@@ -156,16 +156,15 @@ input[type=text] {
 	
 }
 .instruction-list {
-	background-color: tan;
+	background-image: url('img/watercolor-grunge-000100-glossy-rust.jpg');
+	background-position: center;
 	padding: 10px;
 }
 
 .inst-title {
-	text-align: center;
-	margin-bottom: 0;
-	font-weight: bold;
-	font-size:35px;
-	font-family: fantasy;
+	font-weight: bolder;
+	color: white;
+	margin: auto;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
@@ -173,18 +172,28 @@ input[type=text] {
 .elem span {
 	padding-left: 9px;
 	padding-right: 9px;
+	
 }
 .elem {
 	padding-top:5px;
 	padding-bottom:5px;
 }
 .first-span {
+	/*
 	font-weight:900;
-	color: darkred;
+	color: black!important;
+	//darkred
+	*/
+  font-weight: bold;
+  color: black;
+  background-color: darkgrey;
+  border-radius: .25rem;
+  border: 1px solid black;
 }
 .second-span {
 	float:right;
 	font-weight:bold;
+	color: antiquewhite;
 }
 
 			/* R E S U L T   S E C T I O N */
@@ -469,6 +478,7 @@ iframe {
 .inst-motto {
 	width: 450px;
 	margin: 0 10px 30px;
+	color: antiquewhite;
 }
 
 
@@ -486,4 +496,13 @@ iframe {
 .form-submit-btn {
 	background-color: #d9ad7c;
 	color: black;
+}
+.pointer-event {
+	pointer-events: none;
+}
+.logo-font {
+	font-family: 'Shadows Into Light', cursive;
+	font-weight: bold;
+	font-size: larger;
+	color: white;
 }

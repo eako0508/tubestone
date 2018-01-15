@@ -57,7 +57,7 @@ function onPlayerReady(event){
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
 		//$('html, body').animate({ scrollTop: 0});
-		
+		$('iframe').removeClass('pointer-event');
 	});
 	
 	$('.video-related').on('click', 'img', event => {
@@ -249,12 +249,13 @@ function getRelatedVideoList(videoId, callback){
 function watchSubmit(){
 	// Confirm that separate object work
   $('.search-form').submit(event=>{
+  	event.preventDefault();
   	document.activeElement.blur();
-    event.preventDefault();
     const queryTarget = $(event.currentTarget).find('.text-input');
     user_input = queryTarget.val();
     getDataFromApi(renderer.displaySearchResult);
     $('.result-div').removeClass('hide');
+    
   }); 
 }
 
@@ -262,7 +263,10 @@ $('.toggle-result').on('click', event =>{
 	toggleHide();
 });
 
-
+$('video').on('click', event => {
+	$('.time-nav-btn').focus();
+	
+});
 
 
 
@@ -328,7 +332,14 @@ $('.bottom-btn').on('click', event => {
 	$('html, body').animate({ scrollTop: dh});
 	console.log('bottom toggled');
 })
-$(watchSubmit);
+
+function triggerInst(){
+	var lightbox = lity();
+	lightbox('.instruction-list');
+	return;
+}
+
+
 
 								/**	Iframe Async API Load sequence	**/
 var tag = document.createElement('script');
@@ -341,3 +352,8 @@ $(window).resize(function(){
 	let vh = $('#video').height();
 	$('.dummy').height(vh);
 });
+
+
+
+$(triggerInst);
+$(watchSubmit);

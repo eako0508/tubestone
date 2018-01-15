@@ -115,4 +115,4 @@ var renderer = (function() {
 		
 		displayRelatedVideoList: displayRelatedVideoList
   }
-}());
+})();
