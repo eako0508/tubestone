@@ -56,10 +56,19 @@ function onPlayerReady(event){
 		$('#current_title').text(vid_title);
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
-		//$('html, body').animate({ scrollTop: 0});
-		$('iframe').removeClass('pointer-event');
-		$('.show-related-btn').removeClass('invisibility');
-		$('.iframez').removeClass('invisibility');
+		
+		if($('.iframez').hasClass('invisibility')){
+			$('.iframez').removeClass('invisibility');
+			$('.iframez').hide();
+			$('.iframez').fadeIn(1000);
+			
+			$('.show-related-btn').removeClass('invisibility');
+			$('.show-related-btn').hide();
+			$('.show-related-btn').fadeIn(1000);
+		}
+
+		
+		
 	});
 	
 	$('.video-related').on('click', 'img', event => {
@@ -354,7 +363,6 @@ $(window).resize(function(){
 	let vh = $('#video').height();
 	$('.dummy').height(vh);
 });
-
 
 
 $(triggerInst);

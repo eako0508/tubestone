@@ -347,9 +347,12 @@ iframe {
 		
 	}
 	.iframez {
-		display: unset;
+		//display: unset;
 		position: relative;
 		border: 1px transparent;
+		//visibility: visible;
+		display: none;
+		width: 100%;
 	}
 	.iframe-div {
 		position: inherit;
@@ -500,9 +503,11 @@ iframe {
 	background-color: #d9ad7c;
 	color: black;
 }
+/*
 .pointer-event {
 	pointer-events: none;
 }
+*/
 .logo-font {
 	font-family: 'Shadows Into Light', cursive;
 	font-weight: bold;
