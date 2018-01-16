@@ -58,6 +58,8 @@ function onPlayerReady(event){
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
 		//$('html, body').animate({ scrollTop: 0});
 		$('iframe').removeClass('pointer-event');
+		$('.show-related-btn').removeClass('invisibility');
+		$('.iframez').removeClass('invisibility');
 	});
 	
 	$('.video-related').on('click', 'img', event => {
