@@ -343,14 +343,14 @@ $('.bottom-btn').on('click', event => {
 	$('html, body').animate({ scrollTop: dh});
 	console.log('bottom toggled');
 })
-
+/*
 function triggerInst(){
 	var lightbox = lity();
 	lightbox('.instruction-list');
 	return;
 }
-
-
+$(triggerInst);
+*/
 
 								/**	Iframe Async API Load sequence	**/
 var tag = document.createElement('script');
@@ -365,5 +365,5 @@ $(window).resize(function(){
 });
 
 
-$(triggerInst);
+
 $(watchSubmit);

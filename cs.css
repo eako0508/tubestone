@@ -196,6 +196,12 @@ input[type=text] {
 	color: antiquewhite;
 }
 
+.filler {
+	width: 47%;
+	//display: inline-block;
+	float: left;
+	clear: left;
+}
 			/* R E S U L T   S E C T I O N */
 .result-section {
 	background-color: #eeeeee;
@@ -467,6 +473,16 @@ iframe {
 	}
 	.button-container {
 		text-align: center!important;
+	}
+	.filler {
+		width: 100%;
+	}
+	.filler2 {
+		display: none;
+	}
+	.inst-motto {
+		width: 100%!important;
+		margin: unset!important;
 	}
 }
 
