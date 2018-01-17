@@ -197,16 +197,23 @@ input[type=text] {
 }
 
 .filler {
-	width: 40%;
+	//width: 40%;
 	//display: inline-block;
-	float: left;
-	clear: left;
+	//float: left;
+	//clear: left;
 }
 .filler1{
-	
+	visibility: visible;
 }
 .filler2{
-	
+  visibility: visible;
+  text-align: left;
+  padding-bottom: 50%;
+  height: 50%;
+  max-width: 75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 			/* R E S U L T   S E C T I O N */
 .result-section {
@@ -363,7 +370,7 @@ iframe {
 		position: relative;
 		border: 1px transparent;
 		//visibility: visible;
-		display: none;
+		//display: none;
 		width: 100%;
 	}
 	.iframe-div {
@@ -515,9 +522,9 @@ iframe {
 
 
 .dummy {
-	visibility: hidden;
+	//visibility: hidden;
 	content: '.';
-	background-color:white;
+	//background-color:white;
 }
 
 .time-nav-btn {
