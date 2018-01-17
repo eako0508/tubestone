@@ -197,10 +197,16 @@ input[type=text] {
 }
 
 .filler {
-	width: 47%;
+	width: 40%;
 	//display: inline-block;
 	float: left;
 	clear: left;
+}
+.filler1{
+	
+}
+.filler2{
+	
 }
 			/* R E S U L T   S E C T I O N */
 .result-section {
@@ -475,7 +481,7 @@ iframe {
 		text-align: center!important;
 	}
 	.filler {
-		width: 100%;
+		//width: 100%;
 	}
 	.filler2 {
 		display: none;
@@ -501,6 +507,9 @@ iframe {
 	width: 450px;
 	margin: 0 10px 30px;
 	color: antiquewhite;
+}
+.filler1 .inst-motto {
+	width: unset;
 }
 
 
