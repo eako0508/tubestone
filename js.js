@@ -268,7 +268,9 @@ function watchSubmit(){
     if(window_width<=600){
     	$('.iframez').hide();
     }
-    
+    if(!$('.curtain').hasClass('hide')){
+    	$('.curtain').addClass('hide');
+    }
   }); 
 }
 
@@ -353,6 +355,7 @@ function triggerInst(){
 }
 $(triggerInst);
 */
+
 
 								/**	Iframe Async API Load sequence	**/
 var tag = document.createElement('script');
