@@ -4,7 +4,6 @@
 	box-sizing: border-box;
 }
 body {
-	//background-color: #a2836e;
 	background-image: url('img/4238036-background.jpg');
 	
 	background-repeat: no-repeat;
@@ -45,17 +44,9 @@ section {
 }
 
 .next-btn {
-	/*
-	position: absolute;
-	right: 0;
-	*/
 }
 
 .prev-btn {
-	/*
-	position: absolute;
-	left: 0;
-	*/
 }
 /* For search result button container */
 .s-btn-container {
@@ -179,11 +170,6 @@ input[type=text] {
 	padding-bottom:5px;
 }
 .first-span {
-	/*
-	font-weight:900;
-	color: black!important;
-	//darkred
-	*/
   font-weight: bold;
   color: black;
   background-color: darkgrey;
@@ -197,10 +183,7 @@ input[type=text] {
 }
 
 .filler {
-	//width: 40%;
-	//display: inline-block;
-	//float: left;
-	//clear: left;
+
 }
 .filler1{
 	visibility: visible;
@@ -225,7 +208,6 @@ input[type=text] {
   z-index: 1;
   visibility: visible;
   width: 100%;
-//  position: absolute;
   top: 90px;
 }
 .pos-absolute {
@@ -401,11 +383,8 @@ iframe {
 		
 	}
 	.iframez {
-		//display: unset;
 		position: relative;
 		border: 1px transparent;
-		//visibility: visible;
-		//display: none;
 		width: 100%;
 	}
 	.iframe-div {
@@ -523,7 +502,7 @@ iframe {
 		text-align: center!important;
 	}
 	.filler {
-		//width: 100%;
+
 	}
 	.filler2 {
 		display: none!important;
@@ -563,9 +542,7 @@ iframe {
 
 
 .dummy {
-	//visibility: hidden;
 	content: '.';
-	//background-color:white;
 	position: absolute;
 	top: 0;
 	text-align: left;
@@ -579,11 +556,6 @@ iframe {
 	background-color: #d9ad7c;
 	color: black;
 }
-/*
-.pointer-event {
-	pointer-events: none;
-}
-*/
 .logo-font {
 	font-family: 'Shadows Into Light', cursive;
 	font-weight: bold;
