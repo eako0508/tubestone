@@ -225,8 +225,14 @@ input[type=text] {
   z-index: 1;
   visibility: visible;
   width: 100%;
-  position: absolute;
+//  position: absolute;
   top: 90px;
+}
+.pos-absolute {
+	position: absolute;
+}
+.pos-fixed {
+	position: fixed;
 }
 .instruction-curtain .inst-motto {
 	width: 100%;
@@ -520,7 +526,7 @@ iframe {
 		//width: 100%;
 	}
 	.filler2 {
-		display: none;
+		display: none!important;
 	}
 	.curtain-fill2 {
 		display: none;
@@ -560,6 +566,9 @@ iframe {
 	//visibility: hidden;
 	content: '.';
 	//background-color:white;
+	position: absolute;
+	top: 0;
+	text-align: left;
 }
 
 .time-nav-btn {
@@ -580,4 +589,8 @@ iframe {
 	font-weight: bold;
 	font-size: larger;
 	color: white;
+}
+
+.setWidthHalf {
+	width: 50%;
 }

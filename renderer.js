@@ -104,15 +104,20 @@ var renderer = (function() {
 	    <button class='btn page-btn prevPlay-btn'>Prev</button>
 	  `;
 	}
-
+	/*
+	function addIframe(){
+		let iframeTag = `<iframe aria-label='Main Video' id='video' src="https://www.youtube.com/embed/?enablejsapi=1&showinfo=0&iv_load_policy=0&rel=0&playsinline=1" frameborder="0" gesture="media" allowfullscreen></iframe>`;
+		$('.iframe-div').prepend(iframeTag);
+	}
+	*/
   return {
     displaySearchResult: displaySearchResult,
     renderResult: renderResult,
     addNext: addNext,
     addPrev: addPrev,
     addPlayNext: addPlayNext,
-    addPlayPrev: addPlayPrev,
-		
-		displayRelatedVideoList: displayRelatedVideoList
+    addPlayPrev: addPlayPrev,	
+	displayRelatedVideoList: displayRelatedVideoList
+//	addIframe: addIframe
   }
 })();
