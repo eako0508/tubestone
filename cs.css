@@ -229,6 +229,9 @@ input[type=text] {
   position: fixed;
   top: 100px;
 }
+.instruction-curtain .inst-motto {
+	width: 100%;
+}
 .more-btn {
 	display: block!important;
 	margin-left: auto;
