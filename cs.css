@@ -526,6 +526,9 @@ iframe {
 		width: 100%!important;
 		margin: unset!important;
 	}
+	.instruction-curtain {
+		max-width: 100%!important;
+	}
 }
 
 .middle-div-container {	
