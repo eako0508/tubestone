@@ -215,6 +215,12 @@ input[type=text] {
   margin-left: auto;
   margin-right: auto;
 }
+
+.more-btn {
+	display: block!important;
+	margin-left: auto;
+	margin-right: auto;
+}
 			/* R E S U L T   S E C T I O N */
 .result-section {
 	background-color: #eeeeee;
