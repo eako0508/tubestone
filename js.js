@@ -28,23 +28,11 @@ function toggleHide(){
 		//this function will trigger to display result-div and show view related-btn
   	$('.result-div').removeClass('hide');
   	$('.video-related').addClass('hide');
-  	/*
-  	//Displaying show-result-btn at this moment. 
-  	//Need to hide show-result-btn and display show-related-btn
-  	$('.show-search-btn').addClass('hide');
-  	$('.show-related-btn').removeClass('hide');
-  	*/
   } else {
   	
   	//when it's showing search results
   	$('.result-div').addClass('hide');
   	$('.video-related').removeClass('hide');
-  	/*
-  	//Displaying show-result-btn at this moment. 
-  	//Need to hide show-result-btn and display show-related-btn
-  	$('.show-search-btn').removeClass('hide');
-  	$('.show-related-btn').addClass('hide');
-  	*/
   }
 }
 
@@ -58,15 +46,10 @@ function onPlayerReady(event){
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
 		
 		if($('.iframez').hasClass('invisibility')){
-			
 			$('.filler1').fadeOut(1000);
-			
 			$('.iframez').removeClass('invisibility').hide().fadeIn(1000);
 			$('.header-div').removeClass('hide').hide().fadeIn(1000);
 		}
-		
-		
-		
 	});
 	
 	$('.video-related').on('click', 'img', event => {

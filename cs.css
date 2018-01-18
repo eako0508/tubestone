@@ -225,8 +225,7 @@ input[type=text] {
   z-index: 2;
   visibility: visible;
   width: 100%;
-  height: 5000px;
-  position: fixed;
+  position: absolute;
   top: 100px;
 }
 .instruction-curtain .inst-motto {
