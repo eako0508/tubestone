@@ -512,6 +512,9 @@ iframe {
 	.filler2 {
 		display: none;
 	}
+	.curtain-fill2 {
+		display: none;
+	}
 	.inst-motto {
 		width: 100%!important;
 		margin: unset!important;
