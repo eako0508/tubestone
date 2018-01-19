@@ -55,6 +55,8 @@ function onPlayerReady(event){
 	$('.video-related').on('click', 'img', event => {
 		//open video on video-section iframe-div
 		main_videoId = $(event.target).attr('videoId');
+		const vid_title = $(event.target).attr('title');
+		$('#current_title').text(vid_title);
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
 	});
@@ -254,11 +256,11 @@ function watchSubmit(){
 	$('.instruction-curtain').removeClass('col-6');
   }); 
 }
-
+/*
 $('.toggle-result').on('click', event =>{
 	toggleHide();
 });
-
+*/
 $('video').on('click', event => {
 	$('.time-nav-btn').focus();
 	
@@ -328,6 +330,16 @@ $('.bottom-btn').on('click', event => {
 	$('html, body').animate({ scrollTop: dh});
 	console.log('bottom toggled');
 })
+
+$('.show-search-btn').on('click', function(){
+	$('.video-related').addClass('hide');
+	$('.result-div').removeClass('hide');
+});
+$('.show-related-btn').on('click', function(){
+	$('.result-div').addClass('hide');
+	$('.video-related').removeClass('hide');
+});
+
 
 								/**	Iframe Async API Load sequence	**/
 var tag = document.createElement('script');
