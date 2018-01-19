@@ -39,11 +39,17 @@ function toggleHide(){
 function onPlayerReady(event){
 	
 	$('.result-div').on('click', 'img', event => {
+		//video ID
 		main_videoId = $(event.target).attr('videoId');
+		//video Title
 		const vid_title = $(event.target).attr('title');
 		$('#current_title').text(vid_title);
+		//load Video
 		player.loadVideoById(main_videoId);
+		//get related video list
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
+
+		//for first load
 		if($('.iframez').hasClass('invisibility')){
 			$('.curtain').fadeOut(1000);
 			$('.filler2').removeClass('hide').hide().fadeIn(1000);
@@ -55,8 +61,11 @@ function onPlayerReady(event){
 	$('.video-related').on('click', 'img', event => {
 		//open video on video-section iframe-div
 		main_videoId = $(event.target).attr('videoId');
+
 		const vid_title = $(event.target).attr('title');
+		console.log('rel title'+vid_title);
 		$('#current_title').text(vid_title);
+
 		player.loadVideoById(main_videoId);
 		getRelatedVideoList(main_videoId, renderer.displayRelatedVideoList);
 	});

@@ -77,7 +77,7 @@ var renderer = (function() {
 		}
 		return `
 			<div class='search-result search-result-related'>
-			<img class='result-img' id='img-r-${index}-${result.id.videoId}' src='${result.snippet.thumbnails.medium.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}'>
+			<img class='result-img' id='img-r-${index}-${result.id.videoId}' src='${result.snippet.thumbnails.medium.url}' tabindex='0' aria-label='${result.snippet.title}' videoId='${result.id.videoId}' title='${result.snippet.title}'>
 			<p id='pr-${result.id.videoId}' class='result-p'>${temp_title}</p>
 			</div>
 		`;
