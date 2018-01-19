@@ -295,14 +295,6 @@ iframe {
 .result-div {
 	overflow:auto;
 }
-.show-search-btn {
-	background-color: #ce8046;
-	color: white;
-}
-.show-search-btn:hover {
-	background-color: #bb6831;
-	color: white;
-}
 
 
 
@@ -518,7 +510,6 @@ iframe {
 		max-width: 100%!important;
 	}
 }
-
 .middle-div-container {	
 	text-align: center;
 	position: relative;
@@ -527,9 +518,16 @@ iframe {
 	
 }
 .show-related-btn {
+	background-color: #ce8046;
+	color: white;
+}
+.show-search-btn {
 	background-color: #d9ad7c;
 }
-
+.show-related-btn:hover {
+	background-color: #bb6831;
+	color: white;
+}
 .inst-motto {
 	width: 450px;
 	margin: 0 10px 30px;
