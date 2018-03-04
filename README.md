@@ -3,6 +3,10 @@
  This website was first built for a quick access to the videos without loading subscribe, comment, like features, and that is why those miscellaneous materials were trimmed out.
  To offer even faster access, this website has integrated keyboard shortcuts for keyboard users like myself.
 
+## Live Demo
+
+https://eako0508.github.io/tubestone/
+
 ## Desktop View
 
 ![desktop](https://raw.githubusercontent.com/eako0508/tubestone/master/img/new_tubestone_desktop.png)
